@@ -4,7 +4,7 @@ from flask import (
 from flask_pymongo import PyMongo 
 from bson.objectid import ObjectId 
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_paginate import Pagination, get_page_args
+
 
 
 # import env package so it can be seen on Heroku. Otherwise potential errors due to gitignore. 
