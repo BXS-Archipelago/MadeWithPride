@@ -40,6 +40,26 @@ def events():
     return render_template("events.html", events=events)
 
 
+@app.route("/add_event", methods=["GET", "POST"])
+def add_event():
+    if request.method =="POST":         
+         
+        event = {
+            "event_name": request.form.get("event_name"),
+            "event_type": request.form.get("event_type"),
+            "event_location": request.form.get("event_location"),
+            "description": request.form.get("description"),
+            "date": request.form.get("date"),            
+            "created_by": session['user'],
+            "image" : request.form.get("image_url")            
+            }
+        mongo.db.homes.insert_one(home)
+        flash("Event Successfully Added")
+    types= mongo.db.events.find().sort("event_type", 1)
+ 
+    return render_template("add_event.html", categories=categories)
+    
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")),debug=True)
