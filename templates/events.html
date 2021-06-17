@@ -1,18 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for event in events %}
-
-    {{ event.event_name}}
-
-    {% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
 
 
+{% block content %}
 
+
+        
+        {% for event in events %}
+        <div class="col-sm-6  col-md-10 offset-md-1 mt-4">
+            <div class="card text-center card-shadow g-0">
+                <div class="card-header row g-0 home-header">
+
+                    <div class="col-sm-3"></div>
+
+                    <h6 class="list_title align-self-center col-6">{{ event.event_name }} </h6>
+                    <div class="col-3"></div>
+                </div>
+
+
+                <div class="info-img">
+                    <div class="card-body col-lg-12">
+
+                        <div class="signs">
+
+                            <h5 class="card-title txt-1">{{ event.event_type }} </h5>
+                        </div>
+                        <p class="card-text txt-2"> {{ event.event_name }}</p>
+                        <p class="card-text txt-3">{{ event.description }}</p>
+                        <p class="card-text txt-4">{{ event.location}}</p>
+                        
+                        <a href="# " class="btn btn-light btn-1a">Event Details</a>
+                    </div>
+<!-- 
+                    <div class="col-6 ml-auto img-cntr">
+                        <img src="{{ event.image_url }}" class="img-thumbnail right" alt="...">
+                    </div> -->
+                </div>
+                <div class="card-footer text-muted footer-text">
+                    Added by: {{ event.created_by }}
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

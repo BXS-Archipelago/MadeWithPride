@@ -1,9 +1,15 @@
+# import os
+# from flask import (
+#     Flask, flash, render_template, redirect, request, session, url_for )
+# from flask_pymongo import PyMongo 
+# from bson.objectid import ObjectId 
+# from werkzeug.security import generate_password_hash, check_password_hash
+
+
 import os
-from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for )
-from flask_pymongo import PyMongo 
-from bson.objectid import ObjectId 
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import (Flask, flash, render_template, redirect,
+                   url_for)
+from flask_pymongo import PyMongo
 
 
 
@@ -27,12 +33,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 @app.route("/")
-@app.route("/get_events")
-def get_events():
-   
-    events = list(mongo.db.events.find())
+@app.route("/events")
+def events():
+    """ return the listings on events page"""
+    events = list(mongo.db.events.find()) 
     return render_template("events.html", events=events)
 
-    
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")),debug=True)
