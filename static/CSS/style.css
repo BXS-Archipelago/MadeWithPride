@@ -11,35 +11,33 @@
 }
 
 /* event cards */
-.card {
-    color: #4C353D;
-}
 .card-header {
     background-color: #ff6663aa;
 }
+.card {
+    color: #3a3a3a;
+}
 .card h1 {
-    font-size: 2rem;
-    text-transform: capitalize;
-    font-weight: 900;
-    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9EE09E, .4rem .4rem .2rem #FEB144, -.2rem .2rem .2rem #CC99C9, -.3rem .3rem .1rem #9EE09E, -.4rem .4rem .2rem #FEB144, 0rem .2rem .2rem #CC99C9, 0rem .3rem .1rem #9EE09E, 0rem .4rem .2rem #FEB144;
+    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
 }
-.card h2 {
-    font-size: 1.7rem;
-    text-transform: capitalize;
-}
-.card .description {
-    font-size: 1.4rem;
-}
-.card .location {
-    font-style: oblique 25deg;
-}
-.info-img {
+.card-content {
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
+/* does anyone know more about responsive fonts with bootstrap?
+not sure if I need to add something to the configuration of the whole site??
+don't want to mess it up so this sizing is just for clear testing
+the @include throws an error for me, it's too late for me to research this
+further!! Something about Sass mixins?!*/
+/* 
+@include media-breakpoint-up(md) {
+    .card .description {
+        font-size: rfs-fluid-value(5rem);
+      }
+} */
 .card .btn {
     color: #ff6663;
-    font-weight: 700;
     border-width: .3rem;
+    letter-spacing: 0.1rem;
 }
 .card .btn:hover {
     color: #fff;
