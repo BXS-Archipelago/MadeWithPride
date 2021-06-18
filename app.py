@@ -1,15 +1,9 @@
-# import os
-# from flask import (
-#     Flask, flash, render_template, redirect, request, session, url_for )
-# from flask_pymongo import PyMongo 
-# from bson.objectid import ObjectId 
-# from werkzeug.security import generate_password_hash, check_password_hash
-
-
 import os
-from flask import (Flask, flash, render_template, redirect,
-                   url_for)
-from flask_pymongo import PyMongo
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for )
+from flask_pymongo import PyMongo 
+from bson.objectid import ObjectId 
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 
@@ -50,14 +44,14 @@ def add_event():
             "event_location": request.form.get("event_location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            "created_by": session['user'],
+            # "created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
-        mongo.db.homes.insert_one(home)
+        mongo.db.homes.insert_one(event)
         flash("Event Successfully Added")
-    types= mongo.db.events.find().sort("event_type", 1)
+    types= mongo.db.types.find().sort("event_type", 1)
  
-    return render_template("add_event.html", categories=categories)
+    return render_template("add_event.html", types=types)
     
 
 
