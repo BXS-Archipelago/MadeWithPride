@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+ 
+<!--BOOTSTRAP FORM FOR LOGIN -->
+<form method="POST" action="{{ url_for('login') }}">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text" class="form-control" id="username" required>
+    </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+ 
+{% endblock %}
