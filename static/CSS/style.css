@@ -9,3 +9,14 @@
 .font-family-plain {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+/* event cards */
+.card-header {
+    background-color: #ff6663aa;
+}
+.info-img {
+    background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+}
+.card-footer {
+    background-color: #cc99c9aa;
+}
