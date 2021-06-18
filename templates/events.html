@@ -12,7 +12,7 @@
 
                     <div class="col-sm-3"></div>
 
-                    <h6 class="list_title align-self-center col-6">{{ event.event_name }} </h6>
+                    <h1 class="list_title align-self-center col-6">{{ event.event_name }} </h1>
                     <div class="col-3"></div>
                 </div>
 
@@ -22,11 +22,14 @@
 
                         <div class="signs">
 
-                            <h5 class="card-title txt-1">{{ event.event_type }} </h5>
+                            <h2 class="card-title txt-1">{{ event.event_type }} </h2>
                         </div>
-                        <p class="card-text txt-2"> {{ event.event_name }}</p>
-                        <p class="card-text txt-3">{{ event.description }}</p>
-                        <p class="card-text txt-4">{{ event.location}}</p>
+                        <!-- <p class="card-text txt-2"> {{ event.event_name }}</p> -->
+                        <p class="card-text description">{{ event.description }}
+                            <!-- delete after testing -->
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et nulla et dui gravida luctus. Suspendisse ante massa, maximus a massa in, dapibus tempus ex. Etiam non sapien odio. Praesent orci odio, consectetur nec bibendum non, malesuada sit amet massa.
+                        </p>
+                        <p class="card-text location">{{ event.location}}</p>
                         
                         <a href="# " class="btn btn-light btn-1a">Event Details</a>
                     </div>

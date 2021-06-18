@@ -2,17 +2,31 @@
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
-.font-family-important {
+.font-family-important, .card h1 {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.font-family-plain {
+.font-family-plain, .card {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
 /* event cards */
 .card-header {
     background-color: #ff6663aa;
+}
+.card h1 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.card h2 {
+    font-size: 1.7rem;
+    text-transform: capitalize;
+}
+.card .description {
+    font-size: 1.4rem;
+}
+.card .location {
+    font-style: oblique 25deg;
 }
 .info-img {
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
