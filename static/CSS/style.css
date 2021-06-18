@@ -9,3 +9,7 @@
 .font-family-plain {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+.body {
+    background-color: aqua;
+}
