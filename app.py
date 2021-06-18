@@ -1,15 +1,10 @@
-# import os
-# from flask import (
-#     Flask, flash, render_template, redirect, request, session, url_for )
-# from flask_pymongo import PyMongo 
-# from bson.objectid import ObjectId 
-# from werkzeug.security import generate_password_hash, check_password_hash
-
-
 import os
-from flask import (Flask, flash, render_template, redirect,
-                   url_for)
-from flask_pymongo import PyMongo
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for )
+from flask_pymongo import PyMongo 
+from bson.objectid import ObjectId 
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 
 
@@ -58,7 +53,30 @@ def add_event():
     types= mongo.db.events.find().sort("event_type", 1)
  
     return render_template("add_event.html", categories=categories)
-    
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username taken!")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "email": request.form.get("email").lower(),
+            "favourites": []
+        }
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Registration complete!")
+        return redirect(url_for("events"))
+    return render_template('register.html')
 
 
 if __name__ == "__main__":
