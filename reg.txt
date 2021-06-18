@@ -1,8 +1,0 @@
-test file
-a new line
-additional changes here
-
-a conflict line
-show code after the conflict
-
-
