@@ -47,7 +47,7 @@ def add_event():
             # "created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
-        mongo.db.homes.insert_one(event)
+        mongo.db.events.insert_one(event)
         flash("Event Successfully Added")
     types= mongo.db.types.find().sort("event_type", 1)
  
