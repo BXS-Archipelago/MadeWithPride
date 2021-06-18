@@ -11,12 +11,17 @@
 }
 
 /* event cards */
+.card {
+    color: #4C353D;
+}
 .card-header {
     background-color: #ff6663aa;
 }
 .card h1 {
     font-size: 2rem;
     text-transform: capitalize;
+    font-weight: 900;
+    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9EE09E, .4rem .4rem .2rem #FEB144, -.2rem .2rem .2rem #CC99C9, -.3rem .3rem .1rem #9EE09E, -.4rem .4rem .2rem #FEB144, 0rem .2rem .2rem #CC99C9, 0rem .3rem .1rem #9EE09E, 0rem .4rem .2rem #FEB144;
 }
 .card h2 {
     font-size: 1.7rem;
@@ -30,6 +35,14 @@
 }
 .info-img {
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+}
+.card .btn {
+    color: #ff6663;
+    font-weight: 700;
+    border-width: .3rem;
+}
+.card .btn:hover {
+    color: #fff;
 }
 .card-footer {
     background-color: #cc99c9aa;
