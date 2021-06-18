@@ -1,1 +1,4 @@
 test file
+a new line
+a conflict line
+show code after the conflict
