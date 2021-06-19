@@ -121,6 +121,29 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+ 
+    myevents = {"created_by": session["user"]}
+ 
+    user = mongo.db.users.find_one({"username": session["user"]})
+ 
+    favourites = user['favourites']
+    results = []
+    for fav in favourites:
+        results.append(mongo.db.events.find_one({"_id": ObjectId(fav)}))
+ 
+    own_events = mongo.db.events.find(myevents)
+ 
+    if session["user"]:
+        return render_template(
+            "profile.html", username=username, favourites=favourites,
+            myevents=myevents, own_events=own_events, results=results)
+ 
+    return redirect(url_for("login"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), 
