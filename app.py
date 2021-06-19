@@ -103,7 +103,6 @@ def login():
 
 
 
-
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
@@ -120,6 +119,29 @@ def logout():
     session.pop('logged_in', None)
     return redirect(url_for("login"))
 
+# profile app
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    myevents = {"created_by": session["user"]}
+
+    user = mongo.db.users.find_one({"username": session["user"]})
+
+    favourites = user['favourites']
+    results = []
+    for fav in favourites:
+        results.append(mongo.db.events.find_one({"_id": ObjectId(fav)}))
+
+    own_events = mongo.db.events.find(myevents)
+
+    if session["user"]:
+        return render_template(
+            "profile.html", username=username, favourites=favourites,
+            myevents=myevents, own_events=own_events, results=results)
+
+    return redirect(url_for("login"))
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
