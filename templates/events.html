@@ -11,7 +11,7 @@
             <!-- keep card central and nice spacing from edges -->
             <div class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0">
                 <!-- card header -->
-                <div class="card-header container g-0 font-family-important">
+                <div class="card-header container g-0 font-family-important border-basic border-rainbow-purple">
                     <h1 class="align-self-center col p-2 fw-bolder text-capitalize">{{ event.event_name }}</h1>
                     <div class="col-3 signs">
                         {% if session.user|lower == event.created_by|lower %}
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <!-- card body -->
-                <div class="card-content d-flex font-family-plain">
+                <div class="card-content d-flex font-family-plain background-img-crate">
                     <div class="card-body justify-self-center pb-0">
                             <h2 class="card-title text-muted text-capitalize">{{ event.event_type }}</h2>
                         <!-- <p class="card-text txt-2"> {{ event.event_name }}</p> -->
@@ -41,7 +41,7 @@
                         <img src="{{ event.image_url }}" class="img-thumbnail right" alt="...">
                     </div> -->
                 </div>
-                <div class="card-footer text-muted footer-text">
+                <div class="card-footer text-muted footer-text border-basic border-rainbow-green">
                     Added by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
                 </div>
             </div>
