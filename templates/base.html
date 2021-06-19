@@ -40,9 +40,14 @@
                 <a class="nav-link active" aria-current="page" href="{{ url_for('events') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('register') }}">Login / Register</a>
+                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ url_for('add_event') }}">Add Event</a>
               </li>
