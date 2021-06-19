@@ -167,14 +167,14 @@ def profile(username):
 def add_favourite(event_id):
     username = session["user"]
     user = mongo.db.users.find_one({"username": session["user"]})
- 
+
     favourites = user['favourites']
     results = []
     for fav in favourites:
         results.append(mongo.db.events.find_one({"_id": ObjectId(fav)}))
- 
+
     current_event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
- 
+
     if current_event in results:
         flash("This event is already in your favourites")
         return redirect(url_for("profile", username=username))
@@ -184,6 +184,16 @@ def add_favourite(event_id):
             {"$push": {"favourites": ObjectId(event_id)}})
         flash("Favourite saved")
         return redirect(url_for("profile", username=username))
+
+
+@app.route("/remove_favourite/<event_id>", methods=["GET", "POST"])
+def remove_favourite(event_id):
+    username = session['user']
+    mongo.db.users.find_one_and_update(
+        {"username": session["user"].lower()},
+        {"$pull": {"favourites": ObjectId(event_id)}})
+    flash("Favourite removed")
+    return redirect(url_for("profile", username=username))
 
 
 if __name__ == "__main__":
