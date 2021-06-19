@@ -2,18 +2,73 @@
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
-.font-family-important, .card h1 {
+
+.font-family-important {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.font-family-plain, .card {
+.font-family-plain {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.font-white {
+    color: black;
+    font-weight: 1000;
+    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
+    
+}
 
-/* event cards */
+/*classes for background*/
+
+.background-img-trees {
+    background:
+    lightgray
+    url('/static/images/apple-trees-skylar-jean-VW4x7oFSFJU-unsplash.jpg')
+    center/cover
+    no-repeat
+    fixed;
+
+}
+
+.background-img-crate {
+
+    background:
+    grey
+    url('/static/images/lewis-fagg-jjvEpXFH0zk-unsplash.jpg')
+    center/cover
+    no-repeat
+    scroll;
+
+}
+
+.background-gradient-horizontal {
+    background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+}
+
+/*Rainbow border - 
+copied from: https://codepen.io/chriscoyier/pen/ZVYXRx, changed colors to pastel*/
+
+.border-basic {
+
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 10px;
+}
+
+.border-rainbow-purple {
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+.border-rainbow-green {
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+}
+
+
+
+
+/* event cards muted untill Joanna (me) finished styling of the card
 .card-header {
-    background-color: #ff6663aa;
+   background-color: #ff6663aa;
 }
 .card {
     color: #3a3a3a;
@@ -22,8 +77,13 @@
     text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
 }
 .card-content {
-    background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+   background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
+*/
+
+
+
+
 /* does anyone know more about responsive fonts with bootstrap?
 not sure if I need to add something to the configuration of the whole site??
 don't want to mess it up so this sizing is just for clear testing
@@ -35,6 +95,8 @@ further!! Something about Sass mixins?!*/
         font-size: rfs-fluid-value(5rem);
       }
 } */
+
+/* muted to style card differently by Jo
 .card .btn {
     color: #ff6663;
     border-width: .3rem;
@@ -44,6 +106,104 @@ further!! Something about Sass mixins?!*/
     color: #fff;
 }
 .card-footer {
-    background-color: #cc99c9aa;
+   background-color: #cc99c9aa;
+}
+*/
+
+/* CSS FOR OVERLAY ON USER PAGES*/
+.opaque{
+    background-color: rgba(0,0,0,0.8);
+    color: #d9c5b2;
+    padding:2rem;
 }
 
+
+/* pagination css */
+
+
+.pag-links {
+    display: flex;
+    flex-direction: row;
+    background-color: #93c178;
+    font-size: .75rem;
+}
+
+
+.pagination {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.pagination ul {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination ul li {
+    padding: 10px;
+    font-weight: bolder;
+    list-style: none;
+}
+
+.pagination ul li.active {
+    color: #fafafa;
+    background: #743ad5;
+    border: 2px solid white;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.35s ease-in-out;
+    -o-transition: background-color 0.35s ease-in-out;
+    transition: background-color 0.35s ease-in-out;
+    -webkit-box-shadow: 0px 0.4rem 0.4rem 0px rgba(0, 0, 0, .4);
+    box-shadow: 0px 0.4rem 0.4rem 0px rgba(0, 0, 0, .4);
+}
+
+.pagination ul li a {
+    color: white;
+    font-weight: bolder;
+}
+
+.next {
+    color: white;
+    font-weight: bold;
+}
+/* end pagination */
+
+.signs {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: "Montserrat Alternatives", 'Times New Roman', Times, serif;
+    width: 100%;
+   
+}
+
+.signs a {
+    text-shadow: none;
+    color: white;
+    text-decoration: wheat;
+    margin: 4px;
+    padding: 6px;
+}
+
+.flashes {
+    line-height: 2;
+    background-color: #ffe0a6;
+    padding: 4px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.918) 5px 5px 5px;
+}
+
+.view-btn {
+    background-color: #f1eded;
+    text-shadow: none;
+}
+
+.edits {
+    color: white;
+}
