@@ -42,16 +42,15 @@ def add_event():
         event = {
             "event_name": request.form.get("event_name"),
             "event_type": request.form.get("event_type"),
-            "event_location": request.form.get("event_location"),
+            "location": request.form.get("location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            "created_by": session['user'],
+            #"created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
         mongo.db.events.insert_one(event)
         flash("Event Successfully Added")
-    types= mongo.db.events.find().sort("event_type", 1)
- 
+    types= mongo.db.types.find().sort("event_type", 1) 
     return render_template("add_event.html", types=types)
 
 
@@ -106,21 +105,29 @@ def login():
 
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
-     if request.method =="POST":        
+    if request.method =="POST":        
         submit = {
             "event_name": request.form.get("event_name"),
             "event_type": request.form.get("event_type"),
             "event_location": request.form.get("event_location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            "created_by": session['user'],
+            #"created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
         mongo.db.events.update({"_id": ObjectId(event_id)},submit)
         flash("Event Successfully Updated. Thank You!")
+
     event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
     types= mongo.db.events.find().sort("event_type", 1) 
     return render_template("edit_event.html", event=event, types=types)
+
+
+@app.route("/delete_event/<event_id>")
+def delete_event(event_id):
+    mongo.db.events.remove({"_id": ObjectId(event_id)})
+    flash("Your Event has been Deleted. ")
+    return redirect(url_for("events"))
 
 # logout app 
 
