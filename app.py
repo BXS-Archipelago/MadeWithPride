@@ -92,7 +92,7 @@ def login():
                 flash("Welcome, {}".format(request.form.get("username")))
                 session['logged_in'] = True
                 return redirect(url_for(
-                    "events"))
+                    "profile", username= session['user']))
             else:
                 flash("Invalid username/password")
                 return redirect(url_for("login"))
