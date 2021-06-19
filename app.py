@@ -37,7 +37,7 @@ def events():
 
 @app.route("/add_event", methods=["GET", "POST"])
 def add_event():
-    if request.method =="POST":         
+    if request.method =="POST":        
          
         event = {
             "event_name": request.form.get("event_name"),
@@ -45,7 +45,7 @@ def add_event():
             "event_location": request.form.get("event_location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            # "created_by": session['user'],
+            "created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
         mongo.db.events.insert_one(event)
@@ -103,15 +103,15 @@ def login():
 
 
 
+
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
     types= mongo.db.events.find().sort("event_type", 1) 
     return render_template("edit_event.html", event=event, types=types)
 
-
-
 # logout app 
+
 
 @app.route("/logout")
 def logout():
