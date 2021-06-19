@@ -2,6 +2,8 @@
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
+/* import fonts from google */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Merienda+One&display=swap');
 .font-family-important, .card h1 {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
