@@ -12,7 +12,10 @@
 }
 
 .font-white {
-    color:whitesmoke
+    color: black;
+    font-weight: 1000;
+    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
+    
 }
 
 /*classes for background*/
@@ -31,7 +34,7 @@
 
     background:
     grey
-    url('/static/images/apple-crate-jen-theodore-Nd22Byt2ITA-unsplash.jpg')
+    url('/static/images/lewis-fagg-jjvEpXFH0zk-unsplash.jpg')
     center/cover
     no-repeat
     scroll;
@@ -49,7 +52,7 @@ copied from: https://codepen.io/chriscoyier/pen/ZVYXRx, changed colors to pastel
 
     border: 10px solid;
     border-image-slice: 1;
-    border-width: 5px;
+    border-width: 10px;
 }
 
 .border-rainbow-purple {
@@ -92,6 +95,8 @@ further!! Something about Sass mixins?!*/
         font-size: rfs-fluid-value(5rem);
       }
 } */
+
+/* muted to style card differently by Jo
 .card .btn {
     color: #ff6663;
     border-width: .3rem;
@@ -101,5 +106,6 @@ further!! Something about Sass mixins?!*/
     color: #fff;
 }
 .card-footer {
-   /* background-color: #cc99c9aa;*/
+   background-color: #cc99c9aa;
 }
+*/
