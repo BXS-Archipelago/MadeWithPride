@@ -10,6 +10,7 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+
 /* event cards */
 .card-header {
     background-color: #ff6663aa;
@@ -46,8 +47,11 @@ further!! Something about Sass mixins?!*/
     background-color: #cc99c9aa;
 }
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> master

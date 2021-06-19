@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3 mt-5 p-3 edit-here">Edit your Event here</div>
+
+<!-- Edit the Advertisement with home._id -->
+<div class="row p-3">
+<form  class="col-md-6 offset-md-3 g-3 align-items-center" action="{{ url_for('edit_home', home_id=home._id) }}" method = "POST">
+
+<div class="toptext">Please choose from the dropdown menu: </div>
+
+<!-- Dropdown for event categories -->
+   
+     <select id="category_name" name="category_name" class="form-select mb-3 form-control " aria-label="Default  example" required>     
+  
+
+        {% for category in categories %}
+                {% if category.category_name == home.category_name %}
+                    <option selected value="{{ category.category_name }}" >{{ category.category_name }}</option>
+                {% else %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                {% endif %}
+        {% endfor %}
+</select>
+<!--  -->
+
+<form class="col-md-6 offset-md-3 g-3 align-items-center" action="{{ url_for('add_event') }}" method="POST">
+        <div class="toptext">Please choose from the dropdown menu: </div>
+
+        <!-- Dropdown for property categories -->
+        <select id="event_type" name="event_type" class="form-select mb-3 form-control "
+            aria-label="Default  example" required>
+
+            {% for category in categories %}
+            <option value="{{ event.event.type }}">{{ event.event_type }}</option>
+            {% endfor %}
+
+        </select>
+<!-- Input Headline -->
+    
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Headline : </span>
+
+                    <input id="list_title" name="list_title" type="text" minlength="5" maxlength="100" value ="{{- home.list_title -}}"
+                       class="validate form-control" required>
+                    <label for="list_title"></label>
+                </div>
+
+
+<!-- Input Description -->
+
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Description : </span>
+
+                    <input id="list_description" name="list_description" type="text" minlength="5" maxlength="300" value ="{{- home.list_description -}}"
+                       class="validate form-control" required>
+                    <label for="list_description"></label>
+                </div>
+
+<!-- Input # Bedrooms numbers only-->
+
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Bedrooms : </span>
+
+                    <input id="list_bedrooms" name="list_bedrooms" type="text" minlength="1" maxlength="3" value ="{{- home.list_bedrooms -}}"
+                       class="validate form-control" pattern="^[0-9]{1,3}$" required>
+                    <label for="list_bedrooms"></label>
+                    
+                </div>
+
+<!-- Input Price  -->
+
+        
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Price : </span>
+
+                    <input id="list_price" name="list_price" type="text" minlength="1" maxlength="10" value ="{{- home.list_price -}}"
+                       class="validate form-control" required>
+                    <label for="list_price"></label>
+
+                </div>
+
+<!-- Input Description -->
+
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Contact Details : </span>
+
+                    <input id="sold_by" name="sold_by" type="text" minlength="5" maxlength="300" value ="{{- home.sold_by -}}"
+                       class="validate form-control" required>
+                    <label for="sold_by"></label>
+                </div>
+
+<!-- Input For Sale or Sold  -->
+                <div class="form-check form-switch p-3 mt-2">
+                {% if home.sale_sold  == "on" %}
+                <input class="form-check-input" type="checkbox" id="sale_sold" name = "sale_sold"  value ="{{ home.sale_sold }}" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" id="sale_sold" name="sale_sold" value ="{{ home.sale_sold }}" >
+                {% endif %}
+
+                <label class="form-check-label" for="sale_sold">Click if property is Sold. Congratulations!</label>
+                </div>
+
+
+<!-- Input Image1 -->
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Image URL : </span>
+
+                    <input id="list_image1" name="list_image1" type="text" minlength="5" value ="{{- home.list_image1 -}}"
+                       class="validate form-control" required>
+                    <label for="list_image1"></label>
+                </div>
+
+<!-- Input Image2 -->
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Image URL : </span>
+
+                    <input id="list_image2" name="list_image2" type="text" minlength="5" value ="{{- home.list_image2 -}}"
+                       class="validate form-control" required>
+                    <label for="list_image2"></label>
+                </div>
+                
+<!-- Input Image3 -->
+
+     <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+                    <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Image URL : </span>
+
+                    <input id="list_image3" name="list_image3" type="text" minlength="5" value ="{{- home.list_image3 -}}"
+                       class="validate form-control" required>
+                    <label for="list_image3"></label>
+                </div>
+
+
+                <!-- button -->
+                <div class="class">
+                    <button type="submit" class="text-shadow">
+                        SUBMIT
+                    </button>
+                <button class="text-shadow cancel"><a href="{{ url_for('profile', username=session['user']) }}" >CANCEL</a></button>
+</form>
+</div>
+
+{% endblock %}
