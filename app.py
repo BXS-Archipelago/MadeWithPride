@@ -103,13 +103,14 @@ def login():
 
 
 
+
 @app.route("/edit_event/<event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
     types= mongo.db.events.find().sort("event_type", 1) 
     return render_template("edit_event.html", event=event, types=types)
 
-
+# logout app 
 
 
 @app.route("/logout")
