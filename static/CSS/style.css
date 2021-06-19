@@ -207,3 +207,8 @@ further!! Something about Sass mixins?!*/
 .edits {
     color: white;
 }
+
+.nav-links-right {
+    display: flex;
+    justify-content: flex-end;
+}
