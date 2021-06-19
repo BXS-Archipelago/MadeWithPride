@@ -2,6 +2,7 @@
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
+
 .font-family-important, .card h1 {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
@@ -9,6 +10,34 @@
 .font-family-plain, .card {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+
+/*classes for background*/
+
+.background-img-trees {
+    background:
+    lightgray
+    url('/static/images/apple-trees-skylar-jean-VW4x7oFSFJU-unsplash.jpg')
+    center/cover
+    no-repeat
+    fixed;
+
+}
+
+.background-img-crate {
+
+    background:
+    green
+    url('/static/images/apple-crate-jen-theodore-Nd22Byt2ITA-unsplash.jpg')
+    center/contain
+    no-repeat
+    fixed;
+
+}
+
+
+
+
 
 
 /* event cards */
@@ -46,12 +75,3 @@ further!! Something about Sass mixins?!*/
 .card-footer {
     background-color: #cc99c9aa;
 }
-
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> master
