@@ -45,7 +45,7 @@ def add_event():
             "location": request.form.get("location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            #"created_by": session['user'],
+            "created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
         mongo.db.events.insert_one(event)
@@ -111,7 +111,7 @@ def edit_event(event_id):
             "event_location": request.form.get("event_location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            #"created_by": session['user'],
+            "created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
         mongo.db.events.update({"_id": ObjectId(event_id)},submit)
