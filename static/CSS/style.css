@@ -29,8 +29,8 @@
     background:
     grey
     url('/static/images/apple-crate-jen-theodore-Nd22Byt2ITA-unsplash.jpg')
-    center/auto 100%
-    repeat
+    center/cover
+    no-repeat
     scroll;
 
 }
