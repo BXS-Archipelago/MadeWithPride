@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+ 
+<h1>My events</h1>
+{% for event in own_events %}
+<h2>{{ event.event_name }}</h2>
+{% endfor %}
+<!--   favourites=favourites, myevents=myevents, own_events=own_events, results=results)   -->
+<h1>Fav events</h1>
+ {% for fav in results %}
+<h1>{{ fav.event_name }}</h1>
+{% endfor %}
+{% endblock %}
