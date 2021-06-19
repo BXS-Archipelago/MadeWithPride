@@ -45,10 +45,10 @@ def add_event():
             "event_location": request.form.get("event_location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
-            "created_by": session['user'],
+            # "created_by": session['user'],
             "image" : request.form.get("image_url")            
             }
-        mongo.db.homes.insert_one(home)
+        mongo.db.events.insert_one(event)
         flash("Event Successfully Added")
     types= mongo.db.events.find().sort("event_type", 1)
  
@@ -102,12 +102,24 @@ def login():
     return render_template("login.html")
 
 
+
+@app.route("/edit_event/<event_id>", methods="GET", "POST")
+def edit_event(event_id):
+    event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
+    types= mongo.db.events.find().sort("event_type", 1) 
+    return render_template("edit_event.html", event=event, types=types)
+
+
+
+# logout app 
+
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user")
     session.pop('logged_in', None)
     return redirect(url_for("login"))
+
 
 
 if __name__ == "__main__":

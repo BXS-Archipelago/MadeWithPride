@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="">Create a new Event</div>
+
+<!-- Create the form for entering Ad details -->
+<div class="row p-3">
+
+    
+    <form class="col-md-6 offset-md-3 g-3 align-items-center" action="{{ url_for('edit_event', event_id=event._id ) }}" method="POST">
+        <div class="toptext">Please choose from the dropdown menu: </div>
+
+        <!-- Dropdown for property categories -->
+        <select id="event_type" name="event_type" class="form-select mb-3 form-control "
+            aria-label="Default  example" required>
+
+            {% for type in types %}
+            <option value="{{ type.event_type }}">{{ type.event_type }}</option>
+            {% endfor %}
+
+        </select>
+
+        <!-- Input Event Headline -->
+
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Headline : </span>
+
+            <input id="event_name" name="event_name" type="text" minlength="5" maxlength="100"
+                class="validate form-control" required>
+            <label for="event_name"></label>
+        </div>
+
+
+        <!-- Input Event Description -->
+
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Description : </span>
+
+            <input id="description" name="description" type="text" minlength="5" maxlength="500"
+                class="validate form-control" rows = "5" required>
+            <label for="description"></label>
+        </div>
+    
+
+
+        <!-- Input Image1 -->
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Image URL : </span>
+
+            <input id="image_url" name="image_url" type="text" minlength="5" class="validate form-control" required>
+            <label for="image_url"></label>
+        </div>
+
+
+        <!-- button -->
+        <div class="class">
+            <button type="submit" class="text-shadow">
+                Submit Edit
+            </button>
+    </form>
+</div>
+
+{% endblock %}
