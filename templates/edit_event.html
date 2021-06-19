@@ -58,7 +58,14 @@
                 class="validate form-control" rows = "5" required>
             <label for="description"></label>
         </div>
-    
+
+    <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Date : </span>
+
+            <input id="date" name="date" type="text" minlength="5" maxlength="500" value ="{{ event.description }}"
+                class="validate form-control" rows = "5" required>
+            <label for="date"></label>
+        </div>
 
 
         <!-- Input Image1 -->
