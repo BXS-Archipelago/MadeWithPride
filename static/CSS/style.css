@@ -152,10 +152,9 @@ further!! Something about Sass mixins?!*/
 
 .pagination ul li.active {
     color: #fafafa;
-    border-radius: 25px;
-    background: #2bbbad;
-    border: 1px solid black;
-    border-radius: 20%;
+    background: #743ad5;
+    border: 2px solid white;
+    border-radius: 50%;
     -webkit-transition: background-color 0.35s ease-in-out;
     -o-transition: background-color 0.35s ease-in-out;
     transition: background-color 0.35s ease-in-out;
@@ -164,6 +163,47 @@ further!! Something about Sass mixins?!*/
 }
 
 .pagination ul li a {
-    color: red;
+    color: white;
+    font-weight: bolder;
+}
+
+.next {
+    color: white;
+    font-weight: bold;
 }
 /* end pagination */
+
+.signs {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: "Montserrat Alternatives", 'Times New Roman', Times, serif;
+    width: 100%;
+   
+}
+
+.signs a {
+    text-shadow: none;
+    color: white;
+    text-decoration: wheat;
+    margin: 4px;
+    padding: 6px;
+}
+
+.flashes {
+    line-height: 2;
+    background-color: #ffe0a6;
+    padding: 4px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.918) 5px 5px 5px;
+}
+
+.view-btn {
+    background-color: #f1eded;
+    text-shadow: none;
+}
+
+.edits {
+    color: white;
+}

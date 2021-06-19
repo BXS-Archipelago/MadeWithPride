@@ -5,9 +5,9 @@
 
 <div class="searcher">
 
-<form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+<form class="d-flex col-sm-6 offset-sm-3 mt-3">
+        <input class="form-control me-2" type="search" placeholder="Search events" aria-label="Search">
+        <button class="btn btn-outline-success view-btn" type="submit">Search</button>
       </form>
 </div>
 
@@ -24,8 +24,8 @@
                     <h1 class="align-self-center col p-2 fw-bolder text-capitalize">{{ event.event_name }}</h1>
                     <div class="col-3 signs">
                         {% if session.user|lower == event.created_by|lower %}
-                            <a href="{{ url_for('delete_event', event_id=event._id) }} " class="nav-link delete font-white">Delete</a>
-                            <a href="{{ url_for('edit_event', event_id=event._id) }} " class="nav-link edit font-white">Edit</a>
+                            <a href="{{ url_for('delete_event', event_id=event._id) }} " class=" delete font-white">Delete</a>
+                            <a href="{{ url_for('edit_event', event_id=event._id) }} " class=" edit font-white">Edit</a>
                         {% endif %}
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                         </p>
                         <p>
 
-                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-secondary fw-bold">Event Details</a>
+                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-secondary view-btn">Event Details</a>
 
                         </p>
                     </div>

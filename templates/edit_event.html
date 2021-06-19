@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<div class="">Create a new Event</div>
+
 
 <!-- Create the form for entering Ad details -->
 <div class="row p-3">
 
     
-    <form class="col-md-6 offset-md-3 g-3 align-items-center" action="{{ url_for('edit_event', event_id=event._id ) }}" method="POST">
+    <form class="col-md-6 offset-md-3 g-3 align-items-center opaque p3" action="{{ url_for('edit_event', event_id=event._id ) }}" method="POST">
+        <h4 class="col-sm-6 edits">Edit your event here:</h4>
         <div class="toptext">Please choose from the dropdown menu: </div>
 
         <!-- Dropdown for property categories -->
@@ -80,8 +81,8 @@
 
         <!-- button -->
         <div class="class">
-            <a href="{{ url_for('events')}}" class="btn"> Cancel</a>
-            <button type="submit" class="text-shadow">
+            <button href="{{ url_for('events')}}" class="btn-outline-dark"> Cancel</button>
+            <button type="submit" class="btn-danger">
                 Submit Edit
             </button>
     </form>
