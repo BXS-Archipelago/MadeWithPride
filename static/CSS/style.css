@@ -109,3 +109,10 @@ further!! Something about Sass mixins?!*/
    background-color: #cc99c9aa;
 }
 */
+
+/* CSS FOR OVERLAY ON USER PAGES*/
+.opaque{
+    background-color: rgba(0,0,0,0.8);
+    color: #d9c5b2;
+    padding:2rem;
+}
