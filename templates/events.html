@@ -9,21 +9,21 @@
         <!-- do we want an image in these cards? -->
         <article class="container">
             <!-- keep card central and nice spacing from edges -->
-            <div class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0">
+            <div class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0 background-img-crate font-white">
                 <!-- card header -->
-                <div class="card-header container g-0">
+                <div class="card-header container g-0 font-family-important border-basic border-rainbow-purple">
                     <h1 class="align-self-center col p-2 fw-bolder text-capitalize">{{ event.event_name }}</h1>
                     <div class="col-3 signs">
                         {% if session.user|lower == event.created_by|lower %}
-                            <a href="{{ url_for('delete_event', event_id=event._id) }} " class="nav-link delete">Delete</a>
-                            <a href="{{ url_for('edit_event', event_id=event._id) }} " class="nav-link edit ">Edit</a>
+                            <a href="{{ url_for('delete_event', event_id=event._id) }} " class="nav-link delete font-white">Delete</a>
+                            <a href="{{ url_for('edit_event', event_id=event._id) }} " class="nav-link edit font-white">Edit</a>
                         {% endif %}
                     </div>
                 </div>
                 <!-- card body -->
-                <div class="card-content d-flex">
+                <div class="card-content d-flex font-family-plain">
                     <div class="card-body justify-self-center pb-0">
-                            <h2 class="card-title text-muted text-capitalize">{{ event.event_type }}</h2>
+                            <h2 class="card-title text-capitalize font-white">{{ event.event_type }}</h2>
                         <!-- <p class="card-text txt-2"> {{ event.event_name }}</p> -->
                         <p class="card-text description px-md-3 px-lg-5 md-fs-5">
                             {{ event.description }}
@@ -36,7 +36,7 @@
                             {{ event.date }}
                         </p>
                         <p>
-                            <a href="#" class="btn btn-outline-secondary fw-bold">Event Details</a>
+                            <a href="#" class="btn btn-outline-secondary fw-bold font-white">Event Details</a>
                         </p>
                     </div>
                      
@@ -44,7 +44,7 @@
                         <img src="{{ event.image_url }}" class="img-thumbnail right" alt="...">
                     </div> -->
                 </div>
-                <div class="card-footer text-muted footer-text">
+                <div class="card-footer text-muted footer-text border-basic border-rainbow-green font-white">
                     Added by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
                 </div>
                 <a class="btn btn-primary" href="{{ url_for('add_favourite', event_id=event._id) }}" role="button">add to profile</a>
