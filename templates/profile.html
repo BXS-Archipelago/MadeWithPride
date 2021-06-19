@@ -28,12 +28,17 @@
                             
                         </p>
                         <p class="card-text location fst-italic text-muted">
-                            {{ event.location}}
+                            {{ event.location }}
                         </p>
                         <p>
-                            <a href="#" class="btn btn-outline-secondary fw-bold">Event Details</a>
+                             <p class="card-text location fst-italic">
+                            {{ event.date }}
+                        </p>
+                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-secondary fw-bold">Event Details</a>
                         </p>
                     </div>
+
+                   
                      
                     <div class="col-6 ml-auto img-cntr">
                         <img src="{{ event.image_url }}" class="img-thumbnail right" alt="...">
