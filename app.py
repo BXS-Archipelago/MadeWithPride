@@ -128,6 +128,16 @@ def delete_event(event_id):
     flash("Your Event has been Deleted. ")
     return redirect(url_for("events"))
 
+
+# view event 
+
+
+@app.route("/view_event/<id>")
+def view_event(id):
+    current_event = mongo.db.events.find_one({"_id": ObjectId(id)})
+    return render_template("view_event.html", event=current_event)
+
+
 # logout app 
 
 
