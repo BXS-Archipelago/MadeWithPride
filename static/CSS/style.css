@@ -3,11 +3,11 @@
 .font-family-plain - fonts to be used for any plain text*/
 
 
-.font-family-important, .card h1 {
+.font-family-important {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.font-family-plain, .card {
+.font-family-plain {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
