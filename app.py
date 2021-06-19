@@ -52,7 +52,7 @@ def add_event():
         flash("Event Successfully Added")
     types= mongo.db.events.find().sort("event_type", 1)
  
-    return render_template("add_event.html", categories=categories)
+    return render_template("add_event.html", types=types)
 
 
 @app.route("/register", methods=["GET", "POST"])
