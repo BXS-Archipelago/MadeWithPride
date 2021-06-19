@@ -3,14 +3,20 @@
 .font-family-plain - fonts to be used for any plain text*/
 
 
-.font-family-important, .card h1 {
+.font-family-important {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.font-family-plain, .card {
+.font-family-plain {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.font-white {
+    color: black;
+    font-weight: 1000;
+    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
+    
+}
 
 /*classes for background*/
 
@@ -27,22 +33,42 @@
 .background-img-crate {
 
     background:
-    green
-    url('/static/images/apple-crate-jen-theodore-Nd22Byt2ITA-unsplash.jpg')
-    center/contain
+    grey
+    url('/static/images/lewis-fagg-jjvEpXFH0zk-unsplash.jpg')
+    center/cover
     no-repeat
-    fixed;
+    scroll;
 
+}
+
+.background-gradient-horizontal {
+    background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+}
+
+/*Rainbow border - 
+copied from: https://codepen.io/chriscoyier/pen/ZVYXRx, changed colors to pastel*/
+
+.border-basic {
+
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 10px;
+}
+
+.border-rainbow-purple {
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+.border-rainbow-green {
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
 }
 
 
 
 
-
-
-/* event cards */
+/* event cards muted untill Joanna (me) finished styling of the card
 .card-header {
-    background-color: #ff6663aa;
+   background-color: #ff6663aa;
 }
 .card {
     color: #3a3a3a;
@@ -51,8 +77,13 @@
     text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
 }
 .card-content {
-    background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+   background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
+*/
+
+
+
+
 /* does anyone know more about responsive fonts with bootstrap?
 not sure if I need to add something to the configuration of the whole site??
 don't want to mess it up so this sizing is just for clear testing
@@ -64,6 +95,8 @@ further!! Something about Sass mixins?!*/
         font-size: rfs-fluid-value(5rem);
       }
 } */
+
+/* muted to style card differently by Jo
 .card .btn {
     color: #ff6663;
     border-width: .3rem;
@@ -73,5 +106,6 @@ further!! Something about Sass mixins?!*/
     color: #fff;
 }
 .card-footer {
-    background-color: #cc99c9aa;
+   background-color: #cc99c9aa;
 }
+*/
