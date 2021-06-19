@@ -163,6 +163,29 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/add_favourite/<event_id>", methods=["GET", "POST"])
+def add_favourite(event_id):
+    username = session["user"]
+    user = mongo.db.users.find_one({"username": session["user"]})
+ 
+    favourites = user['favourites']
+    results = []
+    for fav in favourites:
+        results.append(mongo.db.events.find_one({"_id": ObjectId(fav)}))
+ 
+    current_event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+ 
+    if current_event in results:
+        flash("This event is already in your favourites")
+        return redirect(url_for("profile", username=username))
+    else:
+        mongo.db.users.update_one(
+            {"username": session["user"].lower()},
+            {"$push": {"favourites": ObjectId(event_id)}})
+        flash("Favourite saved")
+        return redirect(url_for("profile", username=username))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), 
             debug=True)
