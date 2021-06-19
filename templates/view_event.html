@@ -8,13 +8,15 @@
 
 <!--  Card Section for Each Entry -->
  <div class="row md-12 m-3">
+<div class="col-sm-3"></div>
+
 
 <div class="card text-center card-shadow g-0">
   <div class="card-header row g-0">
       <div class="col-sm-3"></div>
 
 
-     <h6 class="list_title align-self-center col-6">{{ home.category_name }}  </h6>
+     <h6 class="list_title align-self-center col-6">{{ event.category_name }}  </h6>
      <div class="col-3 list-sider text-break"></div>
   </div>
   <div class="card" style="width: 18rem;">
@@ -22,7 +24,10 @@
   <div class="card-body">
     <h3 class="card-title">{{ event.event_name }}</h3>
     <h5 class="card-text">{{ event.event_type }}</h5>
-    <p class="card-text">{{ event.event_type }}</p>
+    <p class="card-text">Where: {{ event.location }}</p>
+  </div>
+   <div class="card-footer text-muted">
+    Page added by: {{ event.created_by }}
   </div>
 </div>
 <div class="col-sm-3"></div>
