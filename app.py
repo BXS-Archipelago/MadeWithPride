@@ -4,8 +4,7 @@ from flask import (
 from flask_pymongo import PyMongo 
 from bson.objectid import ObjectId 
 from werkzeug.security import generate_password_hash, check_password_hash
-
-
+from flask_paginate import Pagination, get_page_args
 
 
 # import env package so it can be seen on Heroku. Otherwise potential errors due to gitignore. 
@@ -27,12 +26,72 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
+# Pagination Max 10
+PER_PAGE = 5
+
+# Paginate listings: 
+# ref https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+
+def paginated(events):
+    ## extensive lists parameters
+    page, per_page, offset = get_page_args(
+                            page_parameter='page',
+                            per_page_parameter='per_page')
+    offset = page * PER_PAGE - PER_PAGE
+
+    return events[offset: offset + PER_PAGE]
+
+
+def pagination_args(events):
+    # Extensive listing parameters
+    page, per_page, offset = get_page_args(
+                            page_parameter='page',
+                            per_page_parameter='per_page')
+    total = len(events)
+
+    return Pagination(page=page, per_page=PER_PAGE, total=total)
+
+
+    
 @app.route("/")
 @app.route("/events")
 def events():
-    """ return the listings on events page"""
-    events = list(mongo.db.events.find()) 
-    return render_template("events.html", events=events)
+    """ Returns list of events from folder, newest to oldest """
+    events = list(mongo.db.events.find().sort("created_on", -1))
+    types = mongo.db.types.find().sort("event_type", 1)
+    events_paginated = paginated(events)
+    pagination = pagination_args(events)
+    return render_template(
+        "events.html",
+        events=events_paginated,
+        types = types,
+        pagination=pagination)
+
+
+
+# route without pagination
+# @app.route("/")
+# @app.route("/events")
+# def events():
+#     """ return the listings on events page"""
+#     events = list(mongo.db.events.find()) 
+#     return render_template("events.html", events=events)
+
+
+
+@app.route("/search", methods = ["POST", "GET"])
+def search():
+    mongo.db.events.create_index([("description","text"),("event_name","text")])
+    query=request.form.get('text')
+    events = list(mongo.db.events.find().sort("created_on", -1))
+    result = list(mongo.db.events.find({"$text": {"$search": query}}))
+    result_paginated = paginated(result)
+    pagination = pagination_args(result)
+    return render_template(
+        "events.html",
+        events=result_paginated,        
+        pagination=pagination)
 
 
 @app.route("/add_event", methods=["GET", "POST"])
