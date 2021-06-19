@@ -1,3 +1,0 @@
-Hi all, just a test document to ensure I have the commit and pull request process sorted.
-
-I am not sure if I should commit/push the settings.json file as it has modified itself? So won't do for now.

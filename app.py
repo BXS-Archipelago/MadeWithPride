@@ -1,15 +1,10 @@
-# import os
-# from flask import (
-#     Flask, flash, render_template, redirect, request, session, url_for )
-# from flask_pymongo import PyMongo 
-# from bson.objectid import ObjectId 
-# from werkzeug.security import generate_password_hash, check_password_hash
-
-
 import os
-from flask import (Flask, flash, render_template, redirect,
-                   url_for)
-from flask_pymongo import PyMongo
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for )
+from flask_pymongo import PyMongo 
+from bson.objectid import ObjectId 
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 
 
@@ -57,9 +52,56 @@ def add_event():
         flash("Event Successfully Added")
     types= mongo.db.events.find().sort("event_type", 1)
  
-    return render_template("add_event.html", categories=categories)
-    
+    return render_template("add_event.html", types=types)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username taken!")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "email": request.form.get("email").lower(),
+            "favourites": []
+        }
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Registration complete!")
+        return redirect(url_for("events"))
+    return render_template('register.html')
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                session['logged_in'] = True
+                return redirect(url_for(
+                    "events"))
+            else:
+                flash("Invalid username/password")
+                return redirect(url_for("login"))
+        else:
+            flash("Invalid username/password")
+            return redirect(url_for("login"))
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")),debug=True)
+    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), 
+            debug=True)

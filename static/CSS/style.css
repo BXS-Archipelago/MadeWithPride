@@ -2,10 +2,48 @@
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
-.font-family-important {
+.font-family-important, .card h1 {
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.font-family-plain {
+.font-family-plain, .card {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+
+/* event cards */
+.card-header {
+    background-color: #ff6663aa;
+}
+.card {
+    color: #3a3a3a;
+}
+.card h1 {
+    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
+}
+.card-content {
+    background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
+}
+/* does anyone know more about responsive fonts with bootstrap?
+not sure if I need to add something to the configuration of the whole site??
+don't want to mess it up so this sizing is just for clear testing
+the @include throws an error for me, it's too late for me to research this
+further!! Something about Sass mixins?!*/
+/* 
+@include media-breakpoint-up(md) {
+    .card .description {
+        font-size: rfs-fluid-value(5rem);
+      }
+} */
+.card .btn {
+    color: #ff6663;
+    border-width: .3rem;
+    letter-spacing: 0.1rem;
+}
+.card .btn:hover {
+    color: #fff;
+}
+.card-footer {
+    background-color: #cc99c9aa;
+}
+
