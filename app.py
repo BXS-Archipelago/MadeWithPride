@@ -91,7 +91,7 @@ def login():
                 flash("Welcome, {}".format(request.form.get("username")))
                 session['logged_in'] = True
                 return redirect(url_for(
-                    "events"))
+                    "profile", username= session['user']))
             else:
                 flash("Invalid username/password")
                 return redirect(url_for("login"))
@@ -99,7 +99,6 @@ def login():
             flash("Invalid username/password")
             return redirect(url_for("login"))
     return render_template("login.html")
-
 
 
 
@@ -139,6 +138,29 @@ def logout():
     session.pop('logged_in', None)
     return redirect(url_for("login"))
 
+# profile app
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    myevents = {"created_by": session["user"]}
+
+    user = mongo.db.users.find_one({"username": session["user"]})
+
+    favourites = user['favourites']
+    results = []
+    for fav in favourites:
+        results.append(mongo.db.events.find_one({"_id": ObjectId(fav)}))
+
+    own_events = mongo.db.events.find(myevents)
+
+    if session["user"]:
+        return render_template(
+            "profile.html", username=username, favourites=favourites,
+            myevents=myevents, own_events=own_events, results=results)
+
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
