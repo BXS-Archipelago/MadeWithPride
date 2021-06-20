@@ -13,9 +13,7 @@
 
 .font-white {
     color: whitesmoke;
-    font-weight: 1000;
-
-    
+    font-weight: 1000;    
 }
 
 /*classes for background*/
@@ -162,3 +160,47 @@ further!! Something about Sass mixins?!*/
     display: flex;
     justify-content: flex-end;
 }
+
+.img-cntr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail {
+    max-width: 300px;
+}
+
+.view-title {
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+.view-headers {
+    color: #ecca05;
+    padding: 10px;
+    background-color: darkolivegreen;
+    width: 20%;
+    margin: 20px;
+    border-radius: 5%;
+    border: 1px solid #ecca05;
+}
+
+.fa-stuff {
+    font-size: 1rem;
+    padding: 4px;
+}
+
+@media screen and (max-width: 600px) {
+    .img-cntr {
+        display: none;
+    }
