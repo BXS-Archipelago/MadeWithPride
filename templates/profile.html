@@ -12,7 +12,7 @@
         class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0 background-img-card font-white font-family-plain">
         <!-- card header -->
         <div class="card-header container prof-card-bg g-0">
-            <h1 class="align-self-center col p-2 fw-bolder text-capitalize font-family-important">{{ event.event_name }}</h1>
+            <h1 class="align-self-center col p-2 fw-bolder text-capitalize font-family-important h1-sizes">{{ event.event_name }}</h1>
             <div class="col-3 signs">
 
                 <a href="{{ url_for('delete_event', event_id=event._id) }}" class="nav-link delete font-family-plain">Delete</a>
@@ -52,6 +52,7 @@
     {% endfor %}
 </article>
 <!--   favourites=favourites, myevents=myevents, own_events=own_events, results=results)   -->
+
 <h1 class="text-md-center fw-bolder view-headers font-family-important"><i class="far fa-heart"></i> Wishlist Events</h1>
 {% for fav in results %}
 <!-- event card -->
@@ -62,7 +63,7 @@
         class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0 background-img-card font-white font-family-plain">
         <!-- card header -->
         <div class="card-header container g-0">
-            <h1 class="align-self-center col p-2 fw-bolder text-capitalize font-family-important">{{ fav.event_name }}</h1>
+            <h1 class="align-self-center col p-2 fw-bolder text-capitalize font-family-important h1-sizes">{{ fav.event_name }}</h1>
             <div class="col-3 signs">
             </div>
         </div>

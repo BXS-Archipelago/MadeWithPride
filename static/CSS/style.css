@@ -144,17 +144,19 @@ further!! Something about Sass mixins?!*/
 .signs a {
     text-shadow: none;
     color: white;
-    text-decoration: wheat;
+    text-decoration:none;
     margin: 4px;
     padding: 6px;
 }
 
 .flashes {
     line-height: 2;
-    background-color: #ffe0a6;
+    color: #424242;
+    font-weight: bold;
     padding: 4px;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.918) 5px 5px 5px;
+     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
 }
 
 .view-btn {
@@ -200,10 +202,11 @@ further!! Something about Sass mixins?!*/
     color: #424242;
     padding: 10px;
     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
-    width: 20%;
-    margin: 20px;
+    width: 25%;
+    margin: 20px 20px 20px 40px;
     border-radius: 5%;
     border: 1px solid #424242;
+    font-size: 2rem;
 }
 
 .fa-stuff {
@@ -211,8 +214,42 @@ further!! Something about Sass mixins?!*/
     padding: 4px;
 }
 
-@media screen and (max-width: 600px) {
+.view-card {
+    padding: 30px;
+}
+
+
+.searcher {
+    width: 100%;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search-size {
+    padding: 2px;
+}
+
+@media screen and (max-width: 993px) {
     .img-cntr {
         display: none;
     }
+
+    .view-headers {
+        font-size: 1rem;
+    }
+
+    .h1-sizes {
+        font-size: 1.25rem;
+    }
+
+    .signs a {
+    font-size: .75rem
+    }
+ 
+.view-btn {
+    padding: 2px;
+}
 }
