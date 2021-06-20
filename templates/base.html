@@ -11,7 +11,7 @@
 
   
     <!-- Dave will take a look at moving these to CSS file for simplicity going forward-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,17 +38,18 @@
               <!-- .active and aria-current="page" to move to releveant location on
               each page -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url_for('events') }}">Home</a>
+                <a class="nav-link" aria-current="page" href="{{ url_for('events') }}">Home</a>
               </li>
               {% if session.user %}
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">MyPage</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{ url_for('add_event') }}">Add Event</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{{ url_for('add_event') }}">Add Event</a>
               </li>
               {% else %}
               <li class="nav-item">
@@ -57,6 +58,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('register') }}">Register</a>
               </li>
+              
               {% endif %}
               
             </ul>

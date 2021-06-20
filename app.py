@@ -105,7 +105,7 @@ def add_event():
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
             "created_by": session['user'],
-            "image" : request.form.get("image_url")            
+            "image_url" : request.form.get("image_url")            
             }
         mongo.db.events.insert_one(event)
         flash("Event Successfully Added")
@@ -171,7 +171,7 @@ def edit_event(event_id):
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
             "created_by": session['user'],
-            "image" : request.form.get("image_url")            
+            "image_url" : request.form.get("image_url")            
             }
         mongo.db.events.update({"_id": ObjectId(event_id)},submit)
         flash("Event Successfully Updated. Thank You!")
@@ -184,7 +184,7 @@ def edit_event(event_id):
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
     mongo.db.events.remove({"_id": ObjectId(event_id)})
-    flash("Your Event has been Deleted. ")
+    flash("Your Event has been Deleted.")
     return redirect(url_for("events"))
 
 

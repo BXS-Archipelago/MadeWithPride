@@ -35,30 +35,30 @@
                             <h2 class="card-title text-capitalize font-white">{{ event.event_type }}</h2>
                         <!-- <p class="card-text txt-2"> {{ event.event_name }}</p> -->
                         <p class="card-text description px-md-3 px-lg-5 md-fs-5">
-                            {{ event.description }}
+                            What's happening: {{ event.description }}
                             
                         </p>
                         <p class="card-text location fst-italic">
-                            {{ event.location }}
+                           Where:  {{ event.location }}
                         </p>
                         <p class="card-text location fst-italic">
-                            {{ event.date }}
+                           When: {{ event.date }}
                         </p>
                         <p>
 
-                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-secondary view-btn">Event Details</a>
+                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-secondary view-btn">Full Details</a>
 
                         </p>
                     </div>
                      
-                    <div class="col-6 ml-auto img-cntr">
-                        <img src="{{ event.image_url }}" class="img-thumbnail right" alt="...">
-                    </div> -->
+                     <div class="col-6 ml-auto img-cntr">
+                        <img src="{{ event.image_url }}" class="img-thumbnail img-fluid thumbnail right" alt="...">
+                    </div>  
                 </div>
                 <div class="card-footer text-muted footer-text border-basic border-rainbow-green font-white">
-                    Added by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
+                    Listed by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
                 </div>
-                <a class="btn btn-primary" href="{{ url_for('add_favourite', event_id=event._id) }}" role="button">add to profile</a>
+                <a class="btn btn-primary fa-stuff" href="{{ url_for('add_favourite', event_id=event._id) }}" role="button"><i class="fas fa-star fa-stuff"></i> Save to MyPage</a>
             </div>
         </article>
         {% endfor %}
