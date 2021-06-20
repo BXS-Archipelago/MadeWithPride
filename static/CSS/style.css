@@ -48,8 +48,10 @@
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
 
+/*these colors below come from our logo in nav bar*/
+
 .bg-nice-green {
-    background: linear-gradient(#424242 #5AC09f #8dbf7b #d5bd49 #b2be61);
+    background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
 }
 
 /* does anyone know more about responsive fonts with bootstrap?
@@ -195,13 +197,13 @@ further!! Something about Sass mixins?!*/
 
 
 .view-headers {
-    color: #ecca05;
+    color: #424242;
     padding: 10px;
-    background-color: darkolivegreen;
+    background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
     width: 20%;
     margin: 20px;
     border-radius: 5%;
-    border: 1px solid #ecca05;
+    border: 1px solid #424242;
 }
 
 .fa-stuff {
