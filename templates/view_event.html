@@ -11,27 +11,27 @@
 <div class="col-sm-3 "></div>
 
 
-<div class="col-sm-6 card text-center card-shadow g-0 ">
-  <div class="card-header row g-0 .bg-transparent">
+<div class="col-sm-6 card text-center card-shadow g-0 background-img-card font-white font-family-plain">
+  <div class="card-header row g-0 bg-transparent font-family-important">
       <div class="col-sm-3"></div>
 
 
      <h6 class="align-self-center col-6 view-title">A {{ event.event_type }} Event </h6>
      <div class="col-3 list-sider text-break"></div>
   </div>
-  <div class="card .bg-transparent" >
-      <div class="img-container">
+  <div class="card bg-transparent" >
+      <div class="img-container bg-transparent">
   <img src="{{ event.image_url }}" class="card-img-top view-img img-fluid" 
   alt="Main Event">
   </div>
-  <div class="card-body .bg-transparent">
-    <h3 class="card-title fw-bolder">{{ event.event_name }}</h3>
+  <div class="card-body bg-transparent">
+    <h3 class="card-title fw-bolder font-family-important">{{ event.event_name }}</h3>
     <h5 class="card-text">From our {{ event.event_type }} listings</h5>
     <p class="card-text">Where: {{ event.location }}</p>
     <p class="card-text fw-bolder">What: {{ event.description }}</p>
     <p class="card-text">When: {{ event.date }}</p>
   </div>
-   <div class="card-footer text-muted .bg-transparent">
+   <div class="card-footer bg-transparent">
     Page added by: {{ event.created_by }}
   </div>
 

@@ -5,66 +5,74 @@
 
 <div class="searcher">
 
-<form class="d-flex col-sm-6 offset-sm-3 mt-3" action = "{{ url_for('search') }}" method="POST">
-        <input class="form-control me-2" type="search" placeholder="Search events" name= "text" placeholder="Property Search" aria-label="Search">
+
+    <form class="d-flex col-sm-6 offset-sm-3 mt-3" action="{{ url_for('search') }}" method="POST">
+        <input class="form-control me-2" type="search" placeholder="Search events" name="text"
+            placeholder="Property Search" aria-label="Search">
         <button class="btn btn-outline-success view-btn" href="{{ url_for('search') }} ">Search</button>
-      </form>
+
+
+    </form>
 </div>
 
 
 
 {{ pagination.links }}
 
-        {% for event in events %}
-        <!-- event card -->
-        <!-- do we want an image in these cards? -->
-        <article class="container">
-            <!-- keep card central and nice spacing from edges -->
-            <div class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0 background-img-card font-white">
-                <!-- card header -->
-                <div class="card-header container g-0 font-family-important border-basic border-rainbow-purple">
-                    <h1 class="align-self-center col p-2 fw-bolder text-capitalize">{{ event.event_name }}</h1>
-                    <div class="col-3 signs">
-                        {% if session.user|lower == event.created_by|lower %}
-                            <a href="{{ url_for('delete_event', event_id=event._id) }} " class=" delete font-white">Delete</a>
-                            <a href="{{ url_for('edit_event', event_id=event._id) }} " class=" edit font-white">Edit</a>
-                        {% endif %}
-                    </div>
-                </div>
-                <!-- card body -->
-                <div class="card-content d-flex font-family-plain">
-                    <div class="card-body justify-self-center pb-0">
-                            <h2 class="card-title text-capitalize font-white">{{ event.event_type }}</h2>
-                        <!-- <p class="card-text txt-2"> {{ event.event_name }}</p> -->
-                        <p class="card-text description px-md-3 px-lg-5 md-fs-5">
-                            What's happening: {{ event.description }}
-                            
-                        </p>
-                        <p class="card-text location fst-italic">
-                           Where:  {{ event.location }}
-                        </p>
-                        <p class="card-text location fst-italic">
-                           When: {{ event.date }}
-                        </p>
-                        <p>
-
-                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-secondary view-btn">Full Details</a>
-
-                        </p>
-                    </div>
-                     
-                     <div class="col-6 ml-auto img-cntr">
-                        <img src="{{ event.image_url }}" class="img-thumbnail img-fluid thumbnail right" alt="...">
-                    </div>  
-                </div>
-                <div class="card-footer text-muted footer-text border-basic border-rainbow-green font-white">
-                    Listed by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
-                </div>
-                <a class="btn btn-primary fa-stuff" href="{{ url_for('add_favourite', event_id=event._id) }}" role="button"><i class="fas fa-star fa-stuff"></i> Save to MyPage</a>
+{% for event in events %}
+<!-- event card -->
+<!-- do we want an image in these cards? -->
+<article class="container">
+    <!-- keep card central and nice spacing from edges -->
+    <div
+        class="row justify-content-center my-4 card text-center col-sm-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2 g-0 background-img-card font-white font-family-plain">
+        <!-- card header -->
+        <div class="card-header container g-0 font-family-important border-basic border-rainbow-purple">
+            <h1 class="align-self-center col p-2 fw-bolder text-capitalize">{{ event.event_name }}</h1>
+            <div class="col-3 signs">
+                {% if session.user|lower == event.created_by|lower %}
+                <a href="{{ url_for('delete_event', event_id=event._id) }} "
+                    class="delete font-white font-family-plain">Delete</a>
+                <a href="{{ url_for('edit_event', event_id=event._id) }} "
+                    class="edit font-white font-family-plain">Edit</a>
+                {% endif %}
             </div>
-        </article>
-        {% endfor %}
-    
+        </div>
+        <!-- card body -->
+        <div class="card-content d-flex font-family-plain">
+            <div class="card-body justify-self-center pb-0">
+                <h2 class="card-title text-capitalize font-white font-family-important">{{ event.event_type }}</h2>
+                <!-- <p class="card-text txt-2"> {{ event.event_name }}</p> -->
+                <p class="card-text description px-md-3 px-lg-5 md-fs-5">
+                    What's happening: {{ event.description }}
+
+                </p>
+                <p class="card-text location fst-italic">
+                    Where: {{ event.location }}
+                </p>
+                <p class="card-text location fst-italic">
+                    When: {{ event.date }}
+                </p>
+                <p>
+
+                    <a href="/view_event/{{ event._id }}" class="btn btn-outline-dark view-btn">Full Details</a>
+
+                </p>
+            </div>
+
+            <div class="col-6 ml-auto img-cntr">
+                <img src="{{ event.image_url }}" class="img-thumbnail img-fluid thumbnail right" alt="...">
+            </div>
+        </div>
+        <div class="card-footer footer-text border-basic border-rainbow-green font-white">
+            Listed by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
+        </div>
+        <a class="btn btn-outline-light bg-nice-green" href="{{ url_for('add_favourite', event_id=event._id) }}"
+            role="button"><i class="fas fa-star fa-stuff"></i> Save to MyPage</a>
+    </div>
+</article>
+{% endfor %}
+
 {{ pagination.links }}
 
 {% endblock %}
