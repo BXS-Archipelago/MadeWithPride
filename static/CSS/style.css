@@ -1,3 +1,8 @@
+/* exact colors from our logo */
+
+
+
+
 /* classess to be used for fonts-family
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
@@ -43,6 +48,9 @@
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
 
+.bg-nice-green {
+    background: linear-gradient(#424242 #5AC09f #8dbf7b #d5bd49 #b2be61)
+}
 
 /* does anyone know more about responsive fonts with bootstrap?
 not sure if I need to add something to the configuration of the whole site??
