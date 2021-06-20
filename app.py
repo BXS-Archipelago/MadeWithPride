@@ -81,8 +81,7 @@ def events():
 
 
 @app.route("/search", methods = ["POST", "GET"])
-def search():
-    mongo.db.events.create_index([("description","text"),("event_name","text")])
+def search():    
     query=request.form.get('text')
     events = list(mongo.db.events.find().sort("created_on", -1))
     result = list(mongo.db.events.find({"$text": {"$search": query}}))

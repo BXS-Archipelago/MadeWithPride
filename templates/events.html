@@ -5,11 +5,13 @@
 
 <div class="searcher">
 
-<form class="d-flex col-sm-6 offset-sm-3 mt-3">
-        <input class="form-control me-2" type="search" placeholder="Search events" aria-label="Search">
-        <button class="btn btn-outline-success view-btn" type="submit">Search</button>
+<form class="d-flex col-sm-6 offset-sm-3 mt-3" action = "{{ url_for('search') }}" method="POST">
+        <input class="form-control me-2" type="search" placeholder="Search events" name= "text" placeholder="Property Search" aria-label="Search">
+        <button class="btn btn-outline-success view-btn" href="{{ url_for('search') }} ">Search</button>
       </form>
 </div>
+
+
 
 {{ pagination.links }}
 
