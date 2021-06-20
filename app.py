@@ -176,7 +176,7 @@ def edit_event(event_id):
         flash("Event Successfully Updated. Thank You!")
 
     event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
-    types= mongo.db.events.find().sort("event_type", 1) 
+    types= mongo.db.types.find().sort("event_type", 1) 
     return render_template("edit_event.html", event=event, types=types)
 
 
