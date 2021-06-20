@@ -182,6 +182,9 @@ def edit_event(event_id):
 
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
+    mongo.db.users.update(
+        {"favourites": ObjectId(event_id)},
+        {"$pull": {"favourites": ObjectId(event_id)}})
     mongo.db.events.remove({"_id": ObjectId(event_id)})
     flash("Your Event has been Deleted.")
     return redirect(url_for("events"))
