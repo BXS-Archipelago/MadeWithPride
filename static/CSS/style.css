@@ -12,9 +12,9 @@
 }
 
 .font-white {
-    color: black;
+    color: whitesmoke;
     font-weight: 1000;
-    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
+
     
 }
 
@@ -30,11 +30,11 @@
 
 }
 
-.background-img-crate {
+.background-img-card {
 
     background:
     grey
-    url('/static/images/lewis-fagg-jjvEpXFH0zk-unsplash.jpg')
+    url('/static/images/Pride_dark_mercedes-mehling-7J7x8HLXQKA-unsplash.jpg')
     center/cover
     no-repeat
     scroll;
@@ -48,19 +48,7 @@
 /*Rainbow border - 
 copied from: https://codepen.io/chriscoyier/pen/ZVYXRx, changed colors to pastel*/
 
-.border-basic {
 
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 10px;
-}
-
-.border-rainbow-purple {
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-}
-
-.border-rainbow-green {
-    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
 }
 
 
