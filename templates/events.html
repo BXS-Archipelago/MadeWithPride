@@ -6,8 +6,8 @@
 <div class="searcher">
 
 <form class="d-flex col-sm-6 offset-sm-3 mt-3">
-        <input class="form-control me-2" type="search" placeholder="Search events" aria-label="Search">
-        <button class="btn btn-outline-primary view-btn" type="submit">Search</button>
+        <input class="form-control me-2 bg-nice-green font-white" type="search" placeholder="Search events" aria-label="Search">
+        <button class="btn btn-outline-dark view-btn" type="submit">Search</button>
       </form>
 </div>
 
@@ -46,7 +46,7 @@
                         </p>
                         <p>
 
-                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-primary view-btn">Full Details</a>
+                            <a href="/view_event/{{ event._id }}" class="btn btn-outline-dark view-btn">Full Details</a>
 
                         </p>
                     </div>
@@ -58,7 +58,7 @@
                 <div class="card-footer footer-text border-basic border-rainbow-green font-white">
                     Listed by: <span class="fst-italic text-capitalize">{{ event.created_by }}</span>
                 </div>
-                <a class="btn btn-primary" href="{{ url_for('add_favourite', event_id=event._id) }}" role="button"><i class="fas fa-star fa-stuff"></i> Save to MyPage</a>
+                <a class="btn btn-outline-light bg-nice-green" href="{{ url_for('add_favourite', event_id=event._id) }}" role="button"><i class="fas fa-star fa-stuff"></i> Save to MyPage</a>
             </div>
         </article>
         {% endfor %}
