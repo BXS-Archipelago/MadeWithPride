@@ -200,10 +200,11 @@ further!! Something about Sass mixins?!*/
     color: #424242;
     padding: 10px;
     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
-    width: 20%;
-    margin: 20px;
+    width: 25%;
+    margin: 20px 20px 20px 40px;
     border-radius: 5%;
     border: 1px solid #424242;
+    font-size: 2rem;
 }
 
 .fa-stuff {
