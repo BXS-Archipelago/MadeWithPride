@@ -212,8 +212,16 @@ further!! Something about Sass mixins?!*/
     padding: 4px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 993px) {
     .img-cntr {
         display: none;
+    }
+
+    .view-headers {
+        font-size: 1rem;
+    }
+
+    .h1-sizes {
+        font-size: 1.25rem;
     }
 }
