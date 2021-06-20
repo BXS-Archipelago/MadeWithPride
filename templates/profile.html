@@ -91,7 +91,7 @@
         <div class="card-footer footer-text">
             Added by: <span class="fst-italic text-capitalize">{{ fav.created_by }}</span>
         </div>
-        <a class="btn btn-outline-danger view-btn" href="{{ url_for('remove_favourite', event_id=fav._id) }}" role="button">remove</a>
+        <a class="btn btn-outline-danger view-btn" href="{{ url_for('remove_favourite', event_id=fav._id) }}" role="button">remove from Wishlist</a>
     </div>
     {% endfor %}
 </article>
