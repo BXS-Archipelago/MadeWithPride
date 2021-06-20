@@ -49,7 +49,7 @@
 }
 
 .bg-nice-green {
-    background: linear-gradient(#424242 #5AC09f #8dbf7b #d5bd49 #b2be61)
+    background: linear-gradient(#424242 #5AC09f #8dbf7b #d5bd49 #b2be61);
 }
 
 /* does anyone know more about responsive fonts with bootstrap?
@@ -156,6 +156,7 @@ further!! Something about Sass mixins?!*/
 }
 
 .view-btn {
+    
     background-color: #f1eded;
     text-shadow: none;
 }
