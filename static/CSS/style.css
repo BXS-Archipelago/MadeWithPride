@@ -169,6 +169,22 @@ further!! Something about Sass mixins?!*/
     color: white;
 }
 
+.btn-holder {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cancel-btn {
+    padding: 4px 6px;
+    width: 60px;
+    background-color: orange;
+    margin-right: 5px;
+    font-family: arial;
+    color: white;
+    text-decoration: none;
+}
+
 .nav-links-right {
     display: flex;
     justify-content: flex-end;
