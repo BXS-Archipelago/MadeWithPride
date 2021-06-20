@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center opaque pt-5">
             <div class="my-5">
-                <h2 class="bold">Welcome back</h2>
-                <h4 class="text-muted">Login to view and save the latest events!</h4>
+                <h2 class="bold font-family-important font-white">Welcome back</h2>
+                <h4 class="text-muted font-family-plain">Login to view and save the latest events!</h4>
             </div>
         </div>
     </div>
@@ -15,15 +15,15 @@
             <!--BOOTSTRAP FORM FOR LOGIN -->
             <form method="POST" action="{{ url_for('login') }}">
                 <div class="mb-3">
-                    <label for="username" class="form-label"><strong>Username</strong></label>
+                    <label for="username" class="form-label font-family-plain"><strong>Username</strong></label>
                     <input name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text" class="form-control" id="username" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label"><strong>Password</strong></label>
+                    <label for="password" class="form-label font-family-plain"><strong>Password</strong></label>
                     <input type="password" class="form-control" name="password" id="password" required>
                 </div>
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-danger w-50 my-3">Submit</button>
+                    <button type="submit" class="btn btn-danger w-50 my-3 font-family-plain">Submit</button>
                 </div>
             </form>
         </div>

@@ -45,32 +45,6 @@
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
 
-/*Rainbow border - 
-copied from: https://codepen.io/chriscoyier/pen/ZVYXRx, changed colors to pastel*/
-
-
-}
-
-
-
-
-/* event cards muted untill Joanna (me) finished styling of the card
-.card-header {
-   background-color: #ff6663aa;
-}
-.card {
-    color: #3a3a3a;
-}
-.card h1 {
-    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
-}
-.card-content {
-   background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
-}
-*/
-
-
-
 
 /* does anyone know more about responsive fonts with bootstrap?
 not sure if I need to add something to the configuration of the whole site??
@@ -84,19 +58,7 @@ further!! Something about Sass mixins?!*/
       }
 } */
 
-/* muted to style card differently by Jo
-.card .btn {
-    color: #ff6663;
-    border-width: .3rem;
-    letter-spacing: 0.1rem;
-}
-.card .btn:hover {
-    color: #fff;
-}
-.card-footer {
-   background-color: #cc99c9aa;
-}
-*/
+
 
 /* CSS FOR OVERLAY ON USER PAGES*/
 .opaque{
