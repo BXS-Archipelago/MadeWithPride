@@ -4,7 +4,7 @@
 
 
 <!-- Create the form for entering Ad details -->
-<div class="row pt-3">
+<div class="row pt-3 m-1">
     <form class="col-md-6 offset-md-3 g-3 align-items-center opaque" action="{{ url_for('add_event') }}" method="POST">
         <h4 class="edits">Create a new Event</h4>
         <div class="toptext">Please choose from the dropdown menu: </div>
@@ -23,7 +23,7 @@
 
 
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
-            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Headline : </span>
+            <span class="input-group-text col-1.5 sml-text" id="inputGroup-sizing-sm">Event Headline : </span>
 
             <input id="event_name" name="event_name" type="text" minlength="5" maxlength="100"
                 class="validate form-control" required>
@@ -34,7 +34,7 @@
 
 
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
-            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Location : </span>
+            <span class="input-group-text col-1.5 sml-text" id="inputGroup-sizing-sm">Event Location : </span>
 
             <input id="location" name="location" type="text" maxlength="200" class="validate form-control" required>
             <label for="location"></label>
@@ -45,7 +45,7 @@
 
 
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
-            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Description : </span>
+            <span class="input-group-text col-1.5 sml-text" id="inputGroup-sizing-sm">Event Description : </span>
 
             <input id="description" name="description" type="text" minlength="5" maxlength="500"
                 class="validate form-control" rows="5" required>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
-            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Dates : </span>
+            <span class="input-group-text col-1.5 sml-text" id="inputGroup-sizing-sm">Event Dates : </span>
 
             <input id="date" name="date" type="text" minlength="5" maxlength="200" class="validate form-control"
                 rows="5" required>
@@ -64,7 +64,7 @@
         <!-- Input Image1 -->
 
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
-            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Image URL : </span>
+            <span class="input-group-text col-1.5 sml-text" id="inputGroup-sizing-sm">Image URL : </span>
 
             <input id="image_url" name="image_url" type="url" minlength="5" class="validate form-control" required>
             <label for="image_url"></label>
