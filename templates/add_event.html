@@ -4,10 +4,8 @@
 
 
 <!-- Create the form for entering Ad details -->
-<div class="row p-3">
-
-    
-    <form class="col-md-6 offset-md-3 g-3 align-items-center opaque" action="{{ url_for('add_event') }}" method="POST">
+<div class="row pt-3">
+        <form class="col-md-6 offset-md-3 g-3 align-items-center opaque" action="{{ url_for('add_event') }}" method="POST">
         <h4 class="edits">Create a new Event</h4>
         <div class="toptext">Please choose from the dropdown menu: </div>
 
@@ -72,7 +70,6 @@
             <input id="image_url" name="image_url" type="text" minlength="5" class="validate form-control" required>
             <label for="image_url"></label>
         </div>
-
 
         <!-- button -->
         <div class="class">
