@@ -1,24 +1,37 @@
 {% extends 'base.html' %}
  
 {% block content %}
- 
-<!--BOOTSTRAP FORM FOR LOGIN -->
-<form method="POST" action="{{ url_for('register') }}">
-    <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text" class="form-control" id="username" required>
+<article class="container">
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center opaque pt-5">
+            <div class="my-5">
+                <h2 class="bold font-family-important font-white">Register with us!</h2>
+                <h4 class="text-muted font-family-plain">Sign up to add and save events</h4>
+            </div>
+        </div>
     </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" name="password" id="password" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
- 
- 
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 opaque">
+<!--BOOTSTRAP FORM FOR LOGIN -->
+            <form method="POST" action="{{ url_for('register') }}">
+                <div class="mb-3">
+                    <label for="username" class="form-label font-family-plain"><strong>Username</strong></label>
+                    <input name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label font-family-plain"><strong>Email address</strong></label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text font-family-plain">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label font-family-plain"><strong>Password</strong></label>
+                    <input type="password" class="form-control" name="password" id="password" required>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-danger w-50 my-3 form-family-plain">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>
 {% endblock %}

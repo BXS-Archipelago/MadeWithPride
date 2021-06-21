@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<!-- Create the form for entering Ad details -->
+<div class="row p-3">
+
+    
+    <form class="col-md-6 offset-md-3 g-3 align-items-center opaque p3" action="{{ url_for('edit_event', event_id=event._id ) }}" method="POST">
+        <h4 class="col-sm-6 edits">Edit your event here:</h4>
+        <div class="toptext">Please choose from the dropdown menu: </div>
+
+        <!-- Dropdown for property categories -->
+        <select id="event_type" name="event_type" class="form-select mb-3 form-control "
+            aria-label="Default  example" required>
+
+            {% for type in types %}
+            {% if type.event_type == event.event_type %}
+            <option value="{{ type.event_type }}" select>{{ type.event_type }}</option>
+            {% else %}
+            <option value="{{ type.event_type }}">{{ type.event_type }}</option>
+            {% endif %}
+            {% endfor %}
+
+        </select>
+
+        <!-- Input Event Headline -->
+
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Headline : </span>
+
+            <input id="event_name" name="event_name" type="text" minlength="5" maxlength="100" value ="{{ event.event_name }}"
+                class="validate form-control" required>
+            <label for="event_name"></label>
+        </div>
+
+        
+<!-- Input Event Location -->
+
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Location : </span>
+
+            <input id="location" name="location" type="text" maxlength="200" value ="{{ event.location }}"
+                class="validate form-control" required>
+            <label for="location"></label>
+        </div>
+
+        <!-- Input Event Description -->
+
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Description : </span>
+
+            <input id="description" name="description" type="text" minlength="5" maxlength="500" value ="{{ event.description }}"
+                class="validate form-control" rows = "5" required>
+            <label for="description"></label>
+        </div>
+
+    <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Date : </span>
+
+            <input id="date" name="date" type="text" minlength="5" maxlength="500" value ="{{ event.description }}"
+                class="validate form-control" rows = "5" required>
+            <label for="date"></label>
+        </div>
+
+
+        <!-- Input Image1 -->
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Image URL : </span>
+
+            <input id="image_url" name="image_url" type="text" minlength="5" class="validate form-control" value= "{{ event.image_url }}" required>
+            <label for="image_url"></label>
+        </div>
+
+
+        <!-- button -->
+        <div class="btn-holder">
+            <a href="{{ url_for('events')}}" class="cancel-btn"> Cancel</a>
+            <button type="submit" class="btn-danger">
+                Submit
+            </button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,31 +1,62 @@
+
+
 /* classess to be used for fonts-family
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
+<<<<<<< HEAD
 /* import fonts from google */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Merienda+One&display=swap');
 .font-family-important, .card h1 {
+=======
+
+.font-family-important {
+>>>>>>> master
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
-.font-family-plain, .card {
+.font-family-plain {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.font-white {
+    color: whitesmoke;
+    font-weight: 1000;    
+}
 
-/* event cards */
-.card-header {
-    background-color: #ff6663aa;
+/*classes for background*/
+
+.background-img-trees {
+    background:
+    lightgray
+    url('/static/images/apple-trees-skylar-jean-VW4x7oFSFJU-unsplash.jpg')
+    center/cover
+    no-repeat
+    fixed;
+
 }
-.card {
-    color: #3a3a3a;
+
+.background-img-card {
+
+    background:
+    grey
+    url('/static/images/Pride_dark_mercedes-mehling-7J7x8HLXQKA-unsplash.jpg')
+    center/cover
+    no-repeat
+    scroll;
+
 }
-.card h1 {
-    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
-}
-.card-content {
+
+.background-gradient-horizontal {
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
+
+/*these colors below come from our logo in nav bar*/
+
+.bg-nice-green {
+    background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+}
+
 /* does anyone know more about responsive fonts with bootstrap?
 not sure if I need to add something to the configuration of the whole site??
 don't want to mess it up so this sizing is just for clear testing
@@ -37,15 +68,233 @@ further!! Something about Sass mixins?!*/
         font-size: rfs-fluid-value(5rem);
       }
 } */
-.card .btn {
-    color: #ff6663;
-    border-width: .3rem;
-    letter-spacing: 0.1rem;
-}
-.card .btn:hover {
-    color: #fff;
-}
-.card-footer {
-    background-color: #cc99c9aa;
+
+
+
+/* CSS FOR OVERLAY ON USER PAGES*/
+.opaque{
+    background-color: rgba(0,0,0,0.8);
+    color: #d9c5b2;
+    padding:2rem;
 }
 
+
+/* pagination css */
+
+
+.pag-links {
+    display: flex;
+    flex-direction: row;
+    background-color: #93c178;
+    font-size: .75rem;
+}
+
+
+.pagination {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.pagination ul {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination ul li {
+    padding: 10px;
+    font-weight: bolder;
+    list-style: none;
+}
+
+.pagination ul li.active {
+    color: #fafafa;
+    background: #424242;
+    border: 2px solid white;
+    border-radius: 30%;
+    -webkit-transition: background-color 0.35s ease-in-out;
+    -o-transition: background-color 0.35s ease-in-out;
+    transition: background-color 0.35s ease-in-out;
+    -webkit-box-shadow: 0px 0.4rem 0.4rem 0px rgba(0, 0, 0, .4);
+    box-shadow: 0px 0.4rem 0.4rem 0px rgba(0, 0, 0, .4);
+}
+
+.pagination ul li a {
+    color: white;
+    font-weight: bolder;
+}
+
+.next {
+    color: white;
+    font-weight: bold;
+}
+/* end pagination */
+
+.signs {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: "Montserrat Alternatives", 'Times New Roman', Times, serif;
+    width: 100%;
+   
+}
+
+.signs a {
+    text-shadow: none;
+    color: white;
+    text-decoration:none;
+    margin: 4px;
+    padding: 6px;
+}
+
+.flashes {
+    line-height: 2;
+    color: #424242;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.918) 5px 5px 5px;
+    background-color: red
+}
+
+.view-btn {
+    
+    background-color: #b2be61;
+    text-shadow: none;
+}
+
+.edits {
+    color: white;
+}
+
+.btn-holder {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cancel-btn {
+    padding: 4px 6px;
+    width: 60px;
+    background-color: orange;
+    margin-right: 5px;
+    font-family: arial;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-link:hover {
+    color: lightgreen
+}
+
+.img-cntr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail {
+    max-width: 300px;
+}
+
+.view-title {
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+.view-headers {
+    color: #424242;
+    padding: 10px;
+    background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+    width: 25%;
+    margin: 20px 20px 20px 40px;
+    border-radius: 5%;
+    border: 1px solid #424242;
+    font-size: 2rem;
+}
+
+.fa-stuff {
+    font-size: 1rem;
+    padding: 4px;
+}
+
+.view-card {
+    padding: 30px;
+}
+
+
+.searcher {
+    width: 100%;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search-size {
+    padding: 2px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+}
+.names {
+    text-decoration: none;
+}
+.ftr.hldr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.team { 
+    height: 100px;
+    width: 100px;
+}
+@media screen and (max-width: 993px) {
+    .img-cntr {
+        display: none;
+    }
+
+    .view-headers {
+        font-size: 1rem;
+    }
+
+    .h1-sizes {
+        font-size: 1.25rem;
+    }
+
+    .signs a {
+    font-size: .75rem
+    }
+ 
+.view-btn {
+    padding: 2px;
+}
+}

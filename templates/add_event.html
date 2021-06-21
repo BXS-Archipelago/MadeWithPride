@@ -2,21 +2,21 @@
 
 {% block content %}
 
-<div class="">Create a new Event</div>
 
 <!-- Create the form for entering Ad details -->
 <div class="row p-3">
 
-    <h1>Test</h1>
-    <form class="col-md-6 offset-md-3 g-3 align-items-center" action="{{ url_for('add_event') }}" method="POST">
+    
+    <form class="col-md-6 offset-md-3 g-3 align-items-center opaque" action="{{ url_for('add_event') }}" method="POST">
+        <h4 class="edits">Create a new Event</h4>
         <div class="toptext">Please choose from the dropdown menu: </div>
 
         <!-- Dropdown for property categories -->
         <select id="event_type" name="event_type" class="form-select mb-3 form-control "
             aria-label="Default  example" required>
 
-            {% for category in categories %}
-            <option value="{{ event.event.type }}">{{ event.event_type }}</option>
+            {% for type in types %}
+            <option value="{{ type.event_type }}">{{ type.event_type }}</option>
             {% endfor %}
 
         </select>
@@ -32,18 +32,36 @@
             <label for="event_name"></label>
         </div>
 
+<!-- Input Event Location -->
 
+
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Location : </span>
+
+            <input id="location" name="location" type="text" maxlength="200"
+                class="validate form-control" required>
+            <label for="location"></label>
+        </div>
+
+        
         <!-- Input Event Description -->
 
 
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
             <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Description : </span>
 
-            <input id="description" name="description" type="text" minlength="5" maxlength="300"
-                class="validate form-control" required>
+            <input id="description" name="description" type="text" minlength="5" maxlength="500"
+                class="validate form-control" rows = "5" required>
             <label for="description"></label>
         </div>
     
+        <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Dates : </span>
+
+            <input id="date" name="date" type="text" minlength="5" maxlength="200"
+                class="validate form-control" rows = "5" required>
+            <label for="date"></label>
+        </div>
 
 
         <!-- Input Image1 -->
@@ -58,7 +76,7 @@
 
         <!-- button -->
         <div class="class">
-            <button type="submit" class="text-shadow">
+            <button type="submit" class="btn-danger">
                 Submit
             </button>
     </form>
