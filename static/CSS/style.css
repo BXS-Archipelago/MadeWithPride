@@ -285,12 +285,21 @@ further!! Something about Sass mixins?!*/
     display: flex;
     justify-content: center;
 }
+.team-holder img {
+    transform: scale(.6);
+}
 .team { 
     height: 100px;
     width: 100px;
 }
 
-
+#image-holder {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: fit-content;
+    z-index: -1;
+}
 
 @media screen and (max-width: 993px) {
     .img-cntr {
