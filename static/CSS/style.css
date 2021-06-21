@@ -41,6 +41,7 @@
 .background-img-card {
 
     background:
+    linear-gradient(#222222aa, #222222aa),
     grey
     url('/static/images/Pride_dark_mercedes-mehling-7J7x8HLXQKA-unsplash.jpg')
     center/cover
