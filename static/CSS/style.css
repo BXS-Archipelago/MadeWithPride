@@ -290,7 +290,13 @@ further!! Something about Sass mixins?!*/
     width: 100px;
 }
 
-
+#image-holder {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: fit-content;
+    z-index: -1;
+}
 
 @media screen and (max-width: 993px) {
     .img-cntr {
