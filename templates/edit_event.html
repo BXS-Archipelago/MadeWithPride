@@ -44,7 +44,7 @@
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
             <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Location : </span>
 
-            <input id="location" name="location" type="text" minlength="5" maxlength="100" value ="{{ event.location }}"
+            <input id="location" name="location" type="text" maxlength="200" value ="{{ event.location }}"
                 class="validate form-control" required>
             <label for="location"></label>
         </div>
@@ -80,10 +80,10 @@
 
 
         <!-- button -->
-        <div class="class">
-            <button href="{{ url_for('events')}}" class="btn-outline-dark"> Cancel</button>
+        <div class="btn-holder">
+            <a href="{{ url_for('events')}}" class="cancel-btn"> Cancel</a>
             <button type="submit" class="btn-danger">
-                Submit Edit
+                Submit
             </button>
     </form>
 </div>

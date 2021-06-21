@@ -7,28 +7,34 @@
       
 
 <!--  Card Section for Each Entry -->
- <div class="row md-12 m-3">
-<div class="col-sm-3"></div>
+ <div class="row row-md-8 offset-md-2 m-3 ">
+<div class="col-sm-3 "></div>
 
 
-<div class="card text-center card-shadow g-0">
-  <div class="card-header row g-0">
+<div class="col-sm-6 card text-center card-shadow g-0 background-img-card font-white font-family-plain view-card mt-5">
+  <div class="card-header row g-0 bg-transparent font-family-important">
       <div class="col-sm-3"></div>
 
 
-     <h6 class="list_title align-self-center col-6">{{ event.category_name }}  </h6>
+     <h6 class="align-self-center col-12 view-title">A {{ event.event_type }} Event </h6>
      <div class="col-3 list-sider text-break"></div>
   </div>
-  <div class="card" style="width: 18rem;">
-  <img src="{{ event.image_url }}" class="card-img-top" alt="Main Event">
-  <div class="card-body">
-    <h3 class="card-title">{{ event.event_name }}</h3>
-    <h5 class="card-text">{{ event.event_type }}</h5>
-    <p class="card-text">Where: {{ event.location }}</p>
+  <div class="card bg-transparent" >
+      <div class="img-container bg-transparent">
+  <img src="{{ event.image_url }}" class="card-img-top view-img img-fluid" 
+  alt="Main Event">
   </div>
-   <div class="card-footer text-muted">
+  <div class="card-body bg-transparent">
+    <h3 class="card-title fw-bolder font-family-important">{{ event.event_name }}</h3>
+    <h5 class="card-text">From our {{ event.event_type }} listings</h5>
+    <p class="card-text">Where: {{ event.location }}</p>
+    <p class="card-text fw-bolder">What: {{ event.description }}</p>
+    <p class="card-text">When: {{ event.date }}</p>
+  </div>
+   <div class="card-footer bg-transparent">
     Page added by: {{ event.created_by }}
   </div>
+
 </div>
 <div class="col-sm-3"></div>
 

@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<div class="">Create a new Event</div>
 
 <!-- Create the form for entering Ad details -->
 <div class="row p-3">
 
     
-    <form class="col-md-6 offset-md-3 g-3 align-items-center" action="{{ url_for('add_event') }}" method="POST">
+    <form class="col-md-6 offset-md-3 g-3 align-items-center opaque" action="{{ url_for('add_event') }}" method="POST">
+        <h4 class="edits">Create a new Event</h4>
         <div class="toptext">Please choose from the dropdown menu: </div>
 
         <!-- Dropdown for property categories -->
@@ -38,7 +38,7 @@
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
             <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Location : </span>
 
-            <input id="location" name="location" type="text" minlength="5" maxlength="100"
+            <input id="location" name="location" type="text" maxlength="200"
                 class="validate form-control" required>
             <label for="location"></label>
         </div>
@@ -56,7 +56,7 @@
         </div>
     
         <div class="input-group input-group-sm mb-3 mt-2 form-spacing">
-            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Date : </span>
+            <span class="input-group-text col-1.5" id="inputGroup-sizing-sm">Event Dates : </span>
 
             <input id="date" name="date" type="text" minlength="5" maxlength="200"
                 class="validate form-control" rows = "5" required>
@@ -76,7 +76,7 @@
 
         <!-- button -->
         <div class="class">
-            <button type="submit" class="text-shadow">
+            <button type="submit" class="btn-danger">
                 Submit
             </button>
     </form>

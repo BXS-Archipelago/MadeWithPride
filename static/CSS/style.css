@@ -1,3 +1,5 @@
+
+
 /* classess to be used for fonts-family
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
@@ -12,10 +14,8 @@
 }
 
 .font-white {
-    color: black;
-    font-weight: 1000;
-    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
-    
+    color: whitesmoke;
+    font-weight: 1000;    
 }
 
 /*classes for background*/
@@ -30,11 +30,11 @@
 
 }
 
-.background-img-crate {
+.background-img-card {
 
     background:
     grey
-    url('/static/images/lewis-fagg-jjvEpXFH0zk-unsplash.jpg')
+    url('/static/images/Pride_dark_mercedes-mehling-7J7x8HLXQKA-unsplash.jpg')
     center/cover
     no-repeat
     scroll;
@@ -45,44 +45,11 @@
     background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
 }
 
-/*Rainbow border - 
-copied from: https://codepen.io/chriscoyier/pen/ZVYXRx, changed colors to pastel*/
+/*these colors below come from our logo in nav bar*/
 
-.border-basic {
-
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 10px;
+.bg-nice-green {
+    background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
 }
-
-.border-rainbow-purple {
-    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-}
-
-.border-rainbow-green {
-    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
-}
-
-
-
-
-/* event cards muted untill Joanna (me) finished styling of the card
-.card-header {
-   background-color: #ff6663aa;
-}
-.card {
-    color: #3a3a3a;
-}
-.card h1 {
-    text-shadow: .2rem .2rem .2rem #CC99C9, .3rem .3rem .1rem #9ec1cf, .4rem .5rem .2rem #FEB144, 0rem .3rem .1rem #9ec1cf, 0rem .5rem .2rem #FEB144;
-}
-.card-content {
-   background: linear-gradient(#feb144aa, #fdfd97aa, #9ee09eaa, #9ec1cfaa);
-}
-*/
-
-
-
 
 /* does anyone know more about responsive fonts with bootstrap?
 not sure if I need to add something to the configuration of the whole site??
@@ -96,19 +63,7 @@ further!! Something about Sass mixins?!*/
       }
 } */
 
-/* muted to style card differently by Jo
-.card .btn {
-    color: #ff6663;
-    border-width: .3rem;
-    letter-spacing: 0.1rem;
-}
-.card .btn:hover {
-    color: #fff;
-}
-.card-footer {
-   background-color: #cc99c9aa;
-}
-*/
+
 
 /* CSS FOR OVERLAY ON USER PAGES*/
 .opaque{
@@ -152,9 +107,9 @@ further!! Something about Sass mixins?!*/
 
 .pagination ul li.active {
     color: #fafafa;
-    background: #743ad5;
+    background: #424242;
     border: 2px solid white;
-    border-radius: 50%;
+    border-radius: 30%;
     -webkit-transition: background-color 0.35s ease-in-out;
     -o-transition: background-color 0.35s ease-in-out;
     transition: background-color 0.35s ease-in-out;
@@ -186,24 +141,154 @@ further!! Something about Sass mixins?!*/
 .signs a {
     text-shadow: none;
     color: white;
-    text-decoration: wheat;
+    text-decoration:none;
     margin: 4px;
     padding: 6px;
 }
 
 .flashes {
     line-height: 2;
-    background-color: #ffe0a6;
+    color: #424242;
+    font-weight: bold;
     padding: 4px;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.918) 5px 5px 5px;
+    background-color: red
 }
 
 .view-btn {
-    background-color: #f1eded;
+    
+    background-color: #b2be61;
     text-shadow: none;
 }
 
 .edits {
     color: white;
+}
+
+.btn-holder {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cancel-btn {
+    padding: 4px 6px;
+    width: 60px;
+    background-color: orange;
+    margin-right: 5px;
+    font-family: arial;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-link:hover {
+    color: lightgreen
+}
+
+.img-cntr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail {
+    max-width: 300px;
+}
+
+.view-title {
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+.view-headers {
+    color: #424242;
+    padding: 10px;
+    background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+    width: 25%;
+    margin: 20px 20px 20px 40px;
+    border-radius: 5%;
+    border: 1px solid #424242;
+    font-size: 2rem;
+}
+
+.fa-stuff {
+    font-size: 1rem;
+    padding: 4px;
+}
+
+.view-card {
+    padding: 30px;
+}
+
+
+.searcher {
+    width: 100%;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search-size {
+    padding: 2px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+}
+.names {
+    text-decoration: none;
+}
+.ftr.hldr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.team { 
+    height: 100px;
+    width: 100px;
+}
+@media screen and (max-width: 993px) {
+    .img-cntr {
+        display: none;
+    }
+
+    .view-headers {
+        font-size: 1rem;
+    }
+
+    .h1-sizes {
+        font-size: 1.25rem;
+    }
+
+    .signs a {
+    font-size: .75rem
+    }
+ 
+.view-btn {
+    padding: 2px;
+}
 }

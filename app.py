@@ -81,8 +81,7 @@ def events():
 
 
 @app.route("/search", methods = ["POST", "GET"])
-def search():
-    mongo.db.events.create_index([("description","text"),("event_name","text")])
+def search():    
     query=request.form.get('text')
     events = list(mongo.db.events.find().sort("created_on", -1))
     result = list(mongo.db.events.find({"$text": {"$search": query}}))
@@ -105,7 +104,7 @@ def add_event():
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
             "created_by": session['user'],
-            "image" : request.form.get("image_url")            
+            "image_url" : request.form.get("image_url")            
             }
         mongo.db.events.insert_one(event)
         flash("Event Successfully Added")
@@ -171,20 +170,23 @@ def edit_event(event_id):
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
             "created_by": session['user'],
-            "image" : request.form.get("image_url")            
+            "image_url" : request.form.get("image_url")            
             }
         mongo.db.events.update({"_id": ObjectId(event_id)},submit)
         flash("Event Successfully Updated. Thank You!")
 
     event = mongo.db.events.find_one({"_id":ObjectId(event_id)})
-    types= mongo.db.events.find().sort("event_type", 1) 
+    types= mongo.db.types.find().sort("event_type", 1) 
     return render_template("edit_event.html", event=event, types=types)
 
 
 @app.route("/delete_event/<event_id>")
 def delete_event(event_id):
+    mongo.db.users.update(
+        {"favourites": ObjectId(event_id)},
+        {"$pull": {"favourites": ObjectId(event_id)}})
     mongo.db.events.remove({"_id": ObjectId(event_id)})
-    flash("Your Event has been Deleted. ")
+    flash("Your Event has been Deleted.")
     return redirect(url_for("events"))
 
 
