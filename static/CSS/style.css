@@ -1,3 +1,11 @@
+.body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 
 /* classess to be used for fonts-family
@@ -15,7 +23,7 @@
 
 .font-white {
     color: whitesmoke;
-    font-weight: 1000;    
+    font-weight: 900;    
 }
 
 /*classes for background*/
@@ -33,6 +41,7 @@
 .background-img-card {
 
     background:
+    linear-gradient(#222222aa, #222222aa),
     grey
     url('/static/images/Pride_dark_mercedes-mehling-7J7x8HLXQKA-unsplash.jpg')
     center/cover
@@ -49,6 +58,11 @@
 
 .bg-nice-green {
     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+}
+
+/* full width for nav bar */
+.full-width {
+    max-width: 100%;
 }
 
 /* does anyone know more about responsive fonts with bootstrap?
@@ -153,7 +167,7 @@ further!! Something about Sass mixins?!*/
     padding: 4px;
     border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.918) 5px 5px 5px;
-     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+    background-color: red
 }
 
 .view-btn {
@@ -185,6 +199,10 @@ further!! Something about Sass mixins?!*/
 .nav-links-right {
     display: flex;
     justify-content: flex-end;
+}
+
+.nav-link:hover {
+    color: lightgreen
 }
 
 .img-cntr{
@@ -245,6 +263,31 @@ further!! Something about Sass mixins?!*/
     padding: 2px;
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: row;
+}
+.names {
+    text-decoration: none;
+}
+.ftr.hldr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.team { 
+    height: 100px;
+    width: 100px;
+}
+
+
+
 @media screen and (max-width: 993px) {
     .img-cntr {
         display: none;
@@ -262,7 +305,14 @@ further!! Something about Sass mixins?!*/
     font-size: .75rem
     }
  
-.view-btn {
+    .view-btn {
     padding: 2px;
 }
+
+    .navbar-brand {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    
 }
