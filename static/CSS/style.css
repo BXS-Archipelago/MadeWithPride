@@ -4,14 +4,8 @@
 .font-family-important - fonts to be used for headings and any other big elements
 .font-family-plain - fonts to be used for any plain text*/
 
-<<<<<<< HEAD
-/* import fonts from google */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Merienda+One&display=swap');
-.font-family-important, .card h1 {
-=======
 
 .font-family-important {
->>>>>>> master
     font-family: 'Merienda One', 'Brush Script MT', cursive;
 }
 
@@ -55,6 +49,11 @@
 
 .bg-nice-green {
     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+}
+
+/* full width for nav bar */
+#full-width {
+    max-width: 100%;
 }
 
 /* does anyone know more about responsive fonts with bootstrap?
