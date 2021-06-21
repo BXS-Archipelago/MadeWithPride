@@ -1,3 +1,11 @@
+.body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 
 /* classess to be used for fonts-family
@@ -277,6 +285,9 @@ further!! Something about Sass mixins?!*/
     height: 100px;
     width: 100px;
 }
+
+
+
 @media screen and (max-width: 993px) {
     .img-cntr {
         display: none;
@@ -294,7 +305,14 @@ further!! Something about Sass mixins?!*/
     font-size: .75rem
     }
  
-.view-btn {
+    .view-btn {
     padding: 2px;
 }
+
+    .navbar-brand {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    
 }
