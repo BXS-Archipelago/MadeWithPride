@@ -264,8 +264,12 @@ further!! Something about Sass mixins?!*/
 }
 
 .footer-container {
-    display: flex;
+    display: block;
     flex-direction: row;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 .names {
     text-decoration: none;
