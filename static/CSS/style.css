@@ -288,7 +288,14 @@ further!! Something about Sass mixins?!*/
     font-size: .75rem
     }
  
-.view-btn {
+    .view-btn {
     padding: 2px;
 }
+
+    .navbar-brand {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    
 }

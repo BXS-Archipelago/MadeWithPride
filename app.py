@@ -166,7 +166,7 @@ def edit_event(event_id):
         submit = {
             "event_name": request.form.get("event_name"),
             "event_type": request.form.get("event_type"),
-            "event_location": request.form.get("event_location"),
+            "location": request.form.get("location"),
             "description": request.form.get("description"),
             "date": request.form.get("date"),            
             "created_by": session['user'],
