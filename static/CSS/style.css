@@ -1,6 +1,3 @@
-/* exact colors from our logo */
-
-
 
 
 /* classess to be used for fonts-family
@@ -110,9 +107,9 @@ further!! Something about Sass mixins?!*/
 
 .pagination ul li.active {
     color: #fafafa;
-    background: #743ad5;
+    background: #424242;
     border: 2px solid white;
-    border-radius: 50%;
+    border-radius: 30%;
     -webkit-transition: background-color 0.35s ease-in-out;
     -o-transition: background-color 0.35s ease-in-out;
     transition: background-color 0.35s ease-in-out;
