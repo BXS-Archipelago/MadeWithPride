@@ -26,7 +26,7 @@
   
     <nav class="navbar navbar-expand-lg bg-nice-green font-family-important font-white">
         <div class="container-fluid m-0">
-          <div class="container d-inline-flex m-0 justify-content-between" id="full-width">
+          <div class="container d-inline-flex m-0 justify-content-between full-width">
             
             <!-- name of site - can be removed if not needed -->
             <a class="navbar-brand" href="{{ url_for('events') }}"><img  src="/static/images/logo-transparent.png" class="img-fluid rounded"></a>
@@ -34,8 +34,8 @@
               <img src="../static/images/rainbow-heart.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
             </button>
           </div>
-          <div class="container">
-          <div class="collapse navbar-collapse nav-links-right" id="navbarNav">
+          <div class="container full-width m-0">
+          <div class="collapse navbar-collapse nav-links-right text-end" id="navbarNav">
             <ul class="navbar-nav">
               <!-- .active and aria-current="page" to move to releveant location on
               each page -->

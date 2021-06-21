@@ -52,7 +52,7 @@
 }
 
 /* full width for nav bar */
-#full-width {
+.full-width {
     max-width: 100%;
 }
 
