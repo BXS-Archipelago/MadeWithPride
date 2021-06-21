@@ -15,7 +15,7 @@
 
 .font-white {
     color: whitesmoke;
-    font-weight: 1000;    
+    font-weight: 900;    
 }
 
 /*classes for background*/
@@ -49,6 +49,11 @@
 
 .bg-nice-green {
     background: linear-gradient(to right, #b2be61, #d5bd49, #8dbf7b, #5AC09f, #424242);
+}
+
+/* full width for nav bar */
+.full-width {
+    max-width: 100%;
 }
 
 /* does anyone know more about responsive fonts with bootstrap?
